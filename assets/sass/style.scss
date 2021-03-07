@@ -1,0 +1,39 @@
+/*
+Theme Name: devrelief
+Author: Fred Christianson
+Author URI: https://devrelief.net/fredchristianson
+Version: 1.0
+ */
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@import 'abstracts/__abstracts-dir';
+
+ 
+// 2. Vendors
+@import
+  'vendors/normalize'; 
+
+// 3. Base stuff
+@import 'base/__base-dir';
+
+// 4. Layout-related sections
+@import
+'layout/page',
+'layout/header',
+'layout/footer';
+
+// 5. Components
+@import
+  'components/button',
+  'components/header',
+  'components/edit-image-list';
+
+// 6. Page-specific styles
+@import
+  'pages/home';
+
+// 7. Themes
+@import
+  'themes/default';
+ 

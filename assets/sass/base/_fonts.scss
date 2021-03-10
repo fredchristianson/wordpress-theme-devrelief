@@ -1,3 +1,35 @@
 // -----------------------------------------------------------------------------
 // This file contains all @font-face declarations, if any.
 // -----------------------------------------------------------------------------
+
+html {
+    font-family: Roboto, sans-serif;
+    font-size: clamp(16px,calc(.7rem + .25vw),28px);
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.source-code {
+    font-family: 'Source Code Pro',monospace;
+}
+
+@mixin font-normal {
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: Roboto, sans-serif;
+    line-height: 1.2rem;
+}
+
+@mixin font-medium {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+    line-height: 1.2rem;
+}
+
+@mixin font-bold {
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+    line-height: 1.5rem;
+}

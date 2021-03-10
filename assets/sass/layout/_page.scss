@@ -2,8 +2,16 @@
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
 
-section#main-content{
-    min-height: 20rem;
+#dr-main{
+    min-height: calc(100vh - 20rem);
     margin-bottom: 4rem;
     padding: 0.25rem;
+    width: 90%;
+    max-width: 1600px;
+    margin: auto auto;
+    position: relative;
+}
+
+h1 {
+    margin-bottom: 0.25rem;
 }

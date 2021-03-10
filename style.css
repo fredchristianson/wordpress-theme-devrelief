@@ -348,8 +348,9 @@ template {
 }
 
 html {
-  --color-bg: green;
-  --color-fg: white;
+  --color-bg: white;
+  --color-fg: #444444;
+  --color-hightlight-fg: #061d9b;
   --pad-normal: 0.25rem;
   --max-width: 1600px;
 }
@@ -408,6 +409,17 @@ table {
   border-spacing: 0;
 }
 
+html {
+  font-family: Roboto, sans-serif;
+  font-size: clamp(16px, calc(.7rem + .25vw), 28px);
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.source-code {
+  font-family: 'Source Code Pro',monospace;
+}
+
 /**
  * Set up a decent box model on the root element
  */
@@ -433,7 +445,7 @@ html {
  * Basic styles for links
  */
 a {
-  color: #e50050;
+  color: #0f00e5;
   text-decoration: none;
 }
 
@@ -507,46 +519,116 @@ body {
   font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
-section#main-content {
-  min-height: 20rem;
+#dr-main {
+  min-height: calc(100vh - 20rem);
   margin-bottom: 4rem;
   padding: 0.25rem;
+  width: 90%;
+  max-width: 1600px;
+  margin: auto auto;
+  position: relative;
+}
+
+h1 {
+  margin-bottom: 0.25rem;
 }
 
 header {
-  background-color: #00ffff;
+  background-color: #ffffff;
   padding: 0.25rem;
+  position: relative;
+  margin-bottom: 4rem;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "logo brandname . social" "logo tagline . user" ". menu menu menu";
+  -ms-grid-rows: auto auto 1fr auto;
+      grid-template-rows: auto auto 1fr auto;
+}
+
+header nav {
+  grid-area: 'menu';
 }
 
 header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-height: 2rem;
 }
 
 header nav ul li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 20%;
-          flex: 1 1 20%;
+  margin-right: 1rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   list-style-type: none;
 }
 
 header nav ul li a, header nav ul li a:hover, header nav ul li a:visited {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
   background-color: transparent;
   color: #000000;
   text-decoration: none;
+  -webkit-transition: 1000ms;
+  transition: 1000ms;
 }
 
-header h1 {
-  font-size: 4vw;
+header nav ul li a:hover {
+  text-shadow: 0 0 20px blue;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  -webkit-transition: 1000ms;
+  transition: 1000ms;
+}
+
+header nav ul li.current-menu-item a {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.5rem;
+}
+
+header nav ul:hover a {
+  text-shadow: 0 0 4px var(--color-fg);
+  color: transparent;
+}
+
+header .site-logo {
+  display: inline-block;
+}
+
+header .site-logo img {
+  width: 64px;
+  height: 64px;
+}
+
+header .brand-info {
+  font-size: 2rem;
+  position: absolute;
+  left: 80px;
+  top: 0px;
+  font-weight: 600;
+}
+
+header .brand-info h4 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-top: -.75rem;
 }
 
 footer {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  background-color: #000000;
-  color: #aaaaaa;
+  --footer-bg: var(--color-fg);
+  --footer-fg: var(--color-bg);
+  background-color: var(--footer-bg);
+  color: var(--footer-fg);
   padding: 0.25rem;
 }
 
@@ -565,7 +647,7 @@ footer nav ul li {
 
 footer nav ul li a, footer nav ul li a:hover, footer nav ul li a:visited {
   background-color: transparent;
-  color: #000000;
+  color: var(--footer-fg);
   text-decoration: none;
 }
 
@@ -573,12 +655,12 @@ footer h1 {
   font-size: 4vw;
 }
 
-#main-nav a.active {
-  color: green;
-}
-
 .edit.image-list img {
   max-width: 200px;
   width: 20%;
+}
+
+.acx-smw-social-icon-desc h2 {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

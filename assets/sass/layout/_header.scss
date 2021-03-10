@@ -2,24 +2,77 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 header {
-    background-color: #00ffff;
+    background-color: #ffffff;
     padding: 0.25rem;
+    position: relative;
+    margin-bottom: 4rem;
+    
+    display: grid;
+    grid-template-areas: 
+        "logo brandname . social"
+        "logo tagline . user"
+        ". menu menu menu";
+    grid-template-rows: auto auto 1fr auto;
+    
     nav {
+        grid-area: 'menu';
         ul {
             display: flex;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            min-height: 2rem;
             li {
-                flex: 1 1 20%;
+                margin-right: 1rem;
+                flex: 0 0 auto;
+
                 list-style-type: none;
                 a, a:hover, a:visited {
+                    @include font-normal;
                     background-color: transparent;
                     color: #000000;
                     text-decoration: none;
+                   
+                    transition: 1000ms;
+                }
+
+                a:hover {
+                    text-shadow: 0 0 20px blue;
+                    @include font-medium;
+                    transition: 1000ms;
+                }
+
+                &.current-menu-item a {
+                    @include font-bold;
                 }
             }
         }
+
+        ul:hover a {
+            text-shadow: 0 0 4px var(--color-fg);
+            color: transparent;
+        }
     }
 
-    h1 {
-        font-size: 4vw;
+    .site-logo {
+        display: inline-block;
+        img {
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    .brand-info {
+        font-size: 2rem;
+        position:  absolute;
+        left:80px;
+        top: 0px;
+        font-weight: 600;
+
+        h4 {
+            font-weight: 400;
+            font-size: 1.25rem;
+            margin-top: -.75rem;
+        }
     }
 }

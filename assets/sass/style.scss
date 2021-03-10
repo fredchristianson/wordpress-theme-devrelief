@@ -11,8 +11,7 @@ Version: 1.0
 
  
 // 2. Vendors
-@import
-  'vendors/normalize'; 
+@import 'vendors/normalize'; 
 
 // 3. Base stuff
 @import 'base/__base-dir';
@@ -24,10 +23,7 @@ Version: 1.0
 'layout/footer';
 
 // 5. Components
-@import
-  'components/button',
-  'components/header',
-  'components/edit-image-list';
+@import 'components/__components-dir';
 
 // 6. Page-specific styles
 @import

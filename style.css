@@ -350,7 +350,8 @@ template {
 html {
   --color-bg: white;
   --color-fg: #444444;
-  --color-hightlight-fg: #061d9b;
+  --color-hightlight-fg: #007cba;
+  --color-brand-fg: #005a87;
   --pad-normal: 0.25rem;
   --max-width: 1600px;
 }
@@ -519,14 +520,58 @@ body {
   font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+.dr-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
 #dr-main {
-  min-height: calc(100vh - 20rem);
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin-bottom: 4rem;
-  padding: 0.25rem;
-  width: 90%;
+  width: 100%;
   max-width: 1600px;
-  margin: auto auto;
-  position: relative;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "posts primary" "posts secondary" "posts .";
+  -ms-grid-columns: 1fr 200px;
+      grid-template-columns: 1fr 200px;
+}
+
+#dr-main .posts {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: posts;
+  margin-left: 2rem;
+}
+
+#dr-main .sidebar {
+  font-size: .75rem;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1rem;
+}
+
+#dr-main .sidebar.primary {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: primary;
+  background-color: #aaaaaa;
+}
+
+#dr-main .sidebar.secondary {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: secondary;
+  background-color: #ffffff;
 }
 
 h1 {
@@ -537,33 +582,40 @@ header {
   background-color: #ffffff;
   padding: 0.25rem;
   position: relative;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "logo brandname . social" "logo tagline . user" ". menu menu menu";
-  -ms-grid-rows: auto auto 1fr auto;
-      grid-template-rows: auto auto 1fr auto;
+      grid-template-areas: "logo title . social social" "logo tagline . . user" " logo . . . ." ". menu menu menu menu ";
+  -ms-grid-columns: min-content auto 1fr auto auto;
+      grid-template-columns: -webkit-min-content auto 1fr auto auto;
+      grid-template-columns: min-content auto 1fr auto auto;
+  gap: 0 .25rem;
 }
 
 header nav {
-  grid-area: 'menu';
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-area: menu;
+  -ms-flex-item-align: right;
+      -ms-grid-row-align: right;
+      align-self: right;
 }
 
 header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  min-height: 2rem;
 }
 
 header nav ul li {
-  margin-right: 1rem;
+  margin-left: 1rem;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+      -ms-flex: 0 0 max-content;
+          flex: 0 0 max-content;
+  -ms-flex-item-align: right;
+      -ms-grid-row-align: right;
+      align-self: right;
   list-style-type: none;
 }
 
@@ -596,13 +648,23 @@ header nav ul li.current-menu-item a {
   line-height: 1.5rem;
 }
 
+header nav ul li:first-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+}
+
 header nav ul:hover a {
   text-shadow: 0 0 4px var(--color-fg);
   color: transparent;
 }
 
 header .site-logo {
-  display: inline-block;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: logo;
 }
 
 header .site-logo img {
@@ -610,18 +672,40 @@ header .site-logo img {
   height: 64px;
 }
 
-header .brand-info {
-  font-size: 2rem;
-  position: absolute;
-  left: 80px;
-  top: 0px;
-  font-weight: 600;
+header .site-title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: title;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-brand);
 }
 
-header .brand-info h4 {
+header .site-tagline {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: tagline;
   font-weight: 400;
-  font-size: 1.25rem;
-  margin-top: -.75rem;
+  font-size: 1rem;
+}
+
+header .social-widgets {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 2;
+  grid-area: social;
+  position: absolute;
+  right: 0;
+  white-space: nowrap;
+}
+
+header .user {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+  grid-area: user;
+  position: absolute;
+  right: 0;
+  white-space: nowrap;
 }
 
 footer {

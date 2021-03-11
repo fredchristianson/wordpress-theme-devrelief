@@ -5,27 +5,27 @@ header {
     background-color: #ffffff;
     padding: 0.25rem;
     position: relative;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     
     display: grid;
     grid-template-areas: 
-        "logo brandname . social"
-        "logo tagline . user"
-        ". menu menu menu";
-    grid-template-rows: auto auto 1fr auto;
-    
+        "logo title . social social"
+        "logo tagline . . user"
+        " logo . . . ."
+        ". menu menu menu menu ";
+    grid-template-columns: min-content auto 1fr auto auto;
+    gap: 0 .25rem ;
+
     nav {
-        grid-area: 'menu';
+        grid-area: menu;
+        align-self: right;
+
         ul {
             display: flex;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            min-height: 2rem;
             li {
-                margin-right: 1rem;
-                flex: 0 0 auto;
-
+                margin-left: 1rem;
+               flex: 0 0 max-content;
+                align-self: right;
                 list-style-type: none;
                 a, a:hover, a:visited {
                     @include font-normal;
@@ -46,6 +46,11 @@ header {
                     @include font-bold;
                 }
             }
+
+            li:first-child {
+                flex: 1;
+                text-align: right;
+            }
         }
 
         ul:hover a {
@@ -55,24 +60,39 @@ header {
     }
 
     .site-logo {
-        display: inline-block;
+        grid-area: logo;
         img {
             width: 64px;
             height: 64px;
         }
     }
 
-    .brand-info {
-        font-size: 2rem;
-        position:  absolute;
-        left:80px;
-        top: 0px;
-        font-weight: 600;
+    .site-title {
+        grid-area: title;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--color-brand);
+    }
 
-        h4 {
-            font-weight: 400;
-            font-size: 1.25rem;
-            margin-top: -.75rem;
-        }
+    .site-tagline {
+        grid-area: tagline;
+        font-weight: 400;
+        font-size: 1rem;
+        
+    }
+
+    .social-widgets {
+        grid-area: social;
+        position: absolute;
+        right: 0;
+        
+        white-space: nowrap;
+    }
+
+    .user {
+        grid-area: user;
+        position: absolute;
+        right: 0;
+        white-space: nowrap;
     }
 }

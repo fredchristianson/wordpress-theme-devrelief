@@ -13,12 +13,20 @@ html {
     font-family: 'Source Code Pro',monospace;
 }
 
+@mixin font-small {
+    font-size: .75rem;
+    font-weight: 400;
+    font-family: Roboto, sans-serif;
+    line-height: 1rem;
+}
+
 @mixin font-normal {
     font-size: 1rem;
     font-weight: 400;
     font-family: Roboto, sans-serif;
     line-height: 1.2rem;
 }
+
 
 @mixin font-medium {
     font-size: 1rem;

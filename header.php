@@ -19,10 +19,8 @@
 <?php if ( has_custom_logo() ) : ?>
 		<div class="site-logo"><?php the_custom_logo(); ?></div>
 	<?php endif; ?>
-	<div class='brand-info'>
-    	<h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-    	<h4><?php bloginfo( 'description' ); ?></h4>
-	</div>
+	<h1 class='site-title' ><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+	<h4 class='site-tagline'><?php bloginfo( 'description' ); ?></h4>
     <?php if ( has_nav_menu( 'menu-primary' ) ) : ?>
 		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentynineteen' ); ?>">
 			<?php
@@ -36,5 +34,10 @@
 			?>
 		</nav><!-- #site-navigation -->
 	<?php endif; ?>
-	<?php get_template_part( 'template/header/header', 'widgets' ); ?> 
+	<div class='social-widgets'>
+		<?php get_template_part( 'template/header/header', 'widgets' ); ?> 
+	</div>
+	<div class='user'>
+		<?php get_template_part( 'template/header/header', 'user' ); ?> 
+	</div>
 </header>

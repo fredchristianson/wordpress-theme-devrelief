@@ -2,14 +2,44 @@
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
 
+.dr-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 #dr-main{
-    min-height: calc(100vh - 20rem);
+    flex: 1;
     margin-bottom: 4rem;
-    padding: 0.25rem;
-    width: 90%;
-    max-width: 1600px;
-    margin: auto auto;
-    position: relative;
+    width: 100%;
+    max-width: 1600px; 
+
+    display: grid;
+    grid-template-areas: 
+        "posts primary"
+        "posts secondary"
+        "posts .";
+    grid-template-columns: 1fr 200px;
+
+    .posts {
+        grid-area: posts;
+        margin-left: 2rem;
+    }
+
+    .sidebar {
+        @include font-small;
+    }
+
+    .sidebar.primary {
+        grid-area: primary;
+        background-color: #aaaaaa;
+    }
+
+    .sidebar.secondary {
+        grid-area: secondary;
+        background-color: #ffffff;
+    }
+
 }
 
 h1 {

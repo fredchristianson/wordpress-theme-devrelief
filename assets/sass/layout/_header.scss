@@ -3,9 +3,10 @@
 // -----------------------------------------------------------------------------
 header {
     background-color: #ffffff;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
     padding: 0.25rem;
     position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     
     display: grid;
     grid-template-areas: 
@@ -33,13 +34,12 @@ header {
                     color: #000000;
                     text-decoration: none;
                    
-                    transition: 1000ms;
+                    transition: 100ms;
                 }
 
                 a:hover {
                     text-shadow: 0 0 20px blue;
                     @include font-medium;
-                    transition: 1000ms;
                 }
 
                 &.current-menu-item a {
@@ -47,7 +47,7 @@ header {
                 }
             }
 
-            li:first-child {
+            li:first-child { 
                 flex: 1;
                 text-align: right;
             }

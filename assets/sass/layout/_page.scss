@@ -28,11 +28,12 @@
 
     .sidebar {
         @include font-small;
+        padding: 0.25rem;
     }
 
     .sidebar.primary {
         grid-area: primary;
-        background-color: #aaaaaa;
+        background-color: #eeeeee;
     }
 
     .sidebar.secondary {

@@ -558,13 +558,14 @@ body {
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1rem;
+  padding: 0.25rem;
 }
 
 #dr-main .sidebar.primary {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: primary;
-  background-color: #aaaaaa;
+  background-color: #eeeeee;
 }
 
 #dr-main .sidebar.secondary {
@@ -580,9 +581,10 @@ h1 {
 
 header {
   background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   padding: 0.25rem;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "logo title . social social" "logo tagline . . user" " logo . . . ." ". menu menu menu menu ";
@@ -627,8 +629,8 @@ header nav ul li a, header nav ul li a:hover, header nav ul li a:visited {
   background-color: transparent;
   color: #000000;
   text-decoration: none;
-  -webkit-transition: 1000ms;
-  transition: 1000ms;
+  -webkit-transition: 100ms;
+  transition: 100ms;
 }
 
 header nav ul li a:hover {
@@ -637,8 +639,6 @@ header nav ul li a:hover {
   font-weight: 700;
   font-family: Roboto, sans-serif;
   line-height: 1.2rem;
-  -webkit-transition: 1000ms;
-  transition: 1000ms;
 }
 
 header nav ul li.current-menu-item a {

@@ -35,6 +35,16 @@ html {
     line-height: 1.2rem;
 }
 
+
+
+@mixin font-large {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+    line-height: 1.7rem;
+}
+
+
 @mixin font-bold {
     font-size: 1.25rem;
     font-weight: 700;

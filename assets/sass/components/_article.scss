@@ -2,6 +2,7 @@ article.post {
 
     > h2 {
         a,a:hover {
+            @include font-large;
             color: var(--color-link);
             text-decoration: none;
         }

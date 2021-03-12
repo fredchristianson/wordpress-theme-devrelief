@@ -1,0 +1,25 @@
+p.link {
+    &.small {
+        @include font-small;
+    }
+
+    &.icon a {
+        position: relative;
+        padding-right: 1.1em;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+    }
+
+    &.download a {
+        font-family: 'Font Awesome 5 Free';
+        &::after {
+            content: '\f56d';
+            font-weight: 900;
+            position: absolute;
+            right: 0px;
+        }
+        
+    }
+}

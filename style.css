@@ -352,6 +352,7 @@ html {
   --color-fg: #444444;
   --color-hightlight-fg: #007cba;
   --color-brand-fg: #005a87;
+  --color-link: #0f00e5;
   --pad-normal: 0.25rem;
   --max-width: 1600px;
 }
@@ -746,5 +747,10 @@ footer h1 {
 
 .acx-smw-social-icon-desc h2 {
   display: none;
+}
+
+article.post > h2 a, article.post > h2 a:hover {
+  color: var(--color-link);
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */

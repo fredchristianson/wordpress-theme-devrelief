@@ -1,0 +1,9 @@
+article.post {
+
+    > h2 {
+        a,a:hover {
+            color: var(--color-link);
+            text-decoration: none;
+        }
+    }
+}

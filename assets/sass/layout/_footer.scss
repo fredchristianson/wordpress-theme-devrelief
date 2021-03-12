@@ -9,17 +9,37 @@ footer {
     background-color: var(--footer-bg);
     color: var(--footer-fg);
     padding: 0.25rem;
+
+    display: grid;
+    grid-template-areas: 
+        "widgets navigation";
+    
+    .sidebar.footer {
+        grid-area: widgets;
+        display: flex;
+        gap: 4rem;
+    }
     nav {
+        @include font-small;
+        grid-area: navigation;
+
         ul {
             display: flex;
             li {
-                flex: 1 1 20%;
+                flex: 0;
                 list-style-type: none;
+                white-space: nowrap;
+                margin-left: 1rem;
+                text-align: right;
                 a, a:hover, a:visited {
                     background-color: transparent;
                     color: var(--footer-fg);
                     text-decoration: none;
                 }
+            }
+
+            li:first-child {
+                flex: 1;
             }
         }
     }

@@ -715,6 +715,29 @@ footer {
   background-color: var(--footer-bg);
   color: var(--footer-fg);
   padding: 0.25rem;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "widgets navigation";
+}
+
+footer .sidebar.footer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: widgets;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4rem;
+}
+
+footer nav {
+  font-size: .75rem;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: navigation;
 }
 
 footer nav ul {
@@ -724,16 +747,25 @@ footer nav ul {
 }
 
 footer nav ul li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 20%;
-          flex: 1 1 20%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
   list-style-type: none;
+  white-space: nowrap;
+  margin-left: 1rem;
+  text-align: right;
 }
 
 footer nav ul li a, footer nav ul li a:hover, footer nav ul li a:visited {
   background-color: transparent;
   color: var(--footer-fg);
   text-decoration: none;
+}
+
+footer nav ul li:first-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 footer h1 {

@@ -661,6 +661,16 @@ article {
   background-color: #ffffff;
 }
 
+#dr-main ul {
+  margin-left: var(--large-gap);
+  list-style: disc;
+}
+
+#dr-main ul ul {
+  margin-left: var(--medium-gap);
+  list-style: circle;
+}
+
 h1 {
   margin-bottom: 0.25rem;
 }

@@ -48,6 +48,15 @@
         background-color: #ffffff;
     }
 
+    ul {
+        margin-left: var(--large-gap);
+        list-style: disc;
+
+        ul {
+            margin-left: var(--medium-gap);
+            list-style: circle;
+        }
+    }
 }
 
 h1 {

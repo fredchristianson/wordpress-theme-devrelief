@@ -542,7 +542,7 @@ article {
 * text1 is "most significant" to text6 least.
 * These can be used as either a mixin or style
 */
-.text1 {
+h1, .text1 {
   font-size: 1.5rem;
   font-weight: 700;
   font-family: Roboto, sans-serif;
@@ -551,7 +551,7 @@ article {
   line-height: 2em;
 }
 
-.text2 {
+h2, .text2 {
   font-size: 1.25rem;
   font-weight: 700;
   font-family: Roboto, sans-serif;
@@ -560,7 +560,7 @@ article {
   line-height: 1.5em;
 }
 
-.text3 {
+h3, .text3 {
   font-size: 1.25rem;
   font-weight: 700;
   font-family: Roboto, sans-serif;
@@ -570,7 +570,7 @@ article {
   line-height: 1.5em;
 }
 
-.text4 {
+h4, .text4 {
   font-size: 1rem;
   font-weight: 400;
   font-family: Roboto, sans-serif;
@@ -579,7 +579,7 @@ article {
   line-height: 1.5em;
 }
 
-.text5 {
+h5, .text5 {
   font-size: 1rem;
   font-weight: 400;
   font-family: Roboto, sans-serif;

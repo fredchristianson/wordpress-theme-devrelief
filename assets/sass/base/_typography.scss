@@ -54,22 +54,22 @@ article {
   line-height: 1.2em;
 }
 
-.text1 {
+h1,.text1 {
   @include text1;
 }
 
-.text2 {
+h2,.text2 {
   @include text2
 }
 
-.text3 {
+h3, .text3 {
   @include text3
 }
 
-.text4 {
+h4, .text4 {
   @include text4;
 }
 
-.text5 {
+h5, .text5 {
   @include text5;
 }

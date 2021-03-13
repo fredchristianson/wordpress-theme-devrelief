@@ -4,12 +4,18 @@ $cat_Idea_ID = get_cat_ID('Idea');
 $cat_Draft_ID = get_cat_ID('Draft');
 
 $args = array(
-    'cat' => array(-$cat_Draft_ID, -$cat_Idea_ID),
+    'xcat' => array(-$cat_Draft_ID, -$cat_Idea_ID),
     'order_by' => 'date',
     'order'=>'DES'
 );
 
-$query = new WP_Query( $args); 
+$queryArgs = $wp_query->query_vars;
+if (!$queryArgs['cat']) {
+    $queryArgs['cat'] = array(-$cat_Draft_ID, -$cat_Idea_ID);
+}
+
+$query = new WP_Query($queryArgs);
+
 if ( $query->have_posts() ) :
     while ($query->have_posts() ) : $query->the_post(); 
         ?><article class="post"><?

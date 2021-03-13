@@ -584,7 +584,8 @@ h5, .text5 {
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1.2rem;
-  color: var(--color-fg-light);
+  font-size: 0.75rem;
+  color: var(--color-fg-faint);
   line-height: 1.2em;
 }
 
@@ -687,7 +688,7 @@ h1 {
   }
 }
 
-header {
+header.site-header {
   background-color: #ffffff;
   border-bottom: 1px solid var(--color-faint);
   padding: 0.25rem;
@@ -702,7 +703,7 @@ header {
   gap: 0 .25rem;
 }
 
-header nav {
+header.site-header nav {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
@@ -712,13 +713,13 @@ header nav {
       align-self: right;
 }
 
-header nav ul {
+header.site-header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header nav ul li {
+header.site-header nav ul li {
   margin-left: 1rem;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 max-content;
@@ -729,7 +730,7 @@ header nav ul li {
   list-style-type: none;
 }
 
-header nav ul li a, header nav ul li a:hover, header nav ul li a:visited {
+header.site-header nav ul li a, header.site-header nav ul li a:hover, header.site-header nav ul li a:visited {
   font-size: 1rem;
   font-weight: 400;
   font-family: Roboto, sans-serif;
@@ -741,7 +742,7 @@ header nav ul li a, header nav ul li a:hover, header nav ul li a:visited {
   transition: 100ms;
 }
 
-header nav ul li a:hover {
+header.site-header nav ul li a:hover {
   text-shadow: 0 0 20px blue;
   font-size: 1.25rem;
   font-weight: 700;
@@ -749,38 +750,38 @@ header nav ul li a:hover {
   line-height: 1.2rem;
 }
 
-header nav ul li.current-menu-item a {
+header.site-header nav ul li.current-menu-item a {
   font-size: 1.25rem;
   font-weight: 700;
   font-family: Roboto, sans-serif;
   line-height: 1.5rem;
 }
 
-header nav ul li:first-child {
+header.site-header nav ul li:first-child {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   text-align: right;
 }
 
-header nav ul:hover a {
+header.site-header nav ul:hover a {
   text-shadow: 0 0 4px var(--color-fg);
   color: transparent;
 }
 
-header .site-logo {
+header.site-header .site-logo {
   -ms-grid-row: 1;
   -ms-grid-row-span: 3;
   -ms-grid-column: 1;
   grid-area: logo;
 }
 
-header .site-logo img {
+header.site-header .site-logo img {
   width: 64px;
   height: 64px;
 }
 
-header .site-title {
+header.site-header .site-title {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: title;
@@ -789,7 +790,7 @@ header .site-title {
   color: var(--color-brand);
 }
 
-header .site-tagline {
+header.site-header .site-tagline {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: tagline;
@@ -797,7 +798,7 @@ header .site-tagline {
   font-size: 1rem;
 }
 
-header .social-widgets {
+header.site-header .social-widgets {
   -ms-grid-row: 1;
   -ms-grid-column: 4;
   -ms-grid-column-span: 2;
@@ -807,7 +808,7 @@ header .social-widgets {
   white-space: nowrap;
 }
 
-header .user {
+header.site-header .user {
   -ms-grid-row: 2;
   -ms-grid-column: 5;
   grid-area: user;
@@ -920,13 +921,89 @@ p.link.download a::after {
   width: 20%;
 }
 
-article.post > h2 a, article.post > h2 a:hover {
+article.post header {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "thumbnail title" "thumbnail posted_at" "thumbnail categories" "thumbnail tags" "thumbnail ." "content content";
+  -ms-grid-columns: min-content 1fr;
+      grid-template-columns: -webkit-min-content 1fr;
+      grid-template-columns: min-content 1fr;
+  -ms-grid-rows: min-content min-content min-content auto auto 1fr;
+      grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content auto auto 1fr;
+      grid-template-rows: min-content min-content min-content auto auto 1fr;
+}
+
+article.post header h2.title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: title;
+}
+
+article.post header h2.title a, article.post header h2.title a:hover {
   font-size: 1.5rem;
   font-weight: 700;
   font-family: Roboto, sans-serif;
   line-height: 1.7rem;
   color: var(--color-link);
   text-decoration: none;
+}
+
+article.post header .thumbnail {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 1;
+  grid-area: thumbnail;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+article.post header .tags {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: tags;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  color: var(--color-fg-normal);
+  line-height: 1.5em;
+  font-style: italic;
+}
+
+article.post header .categories {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: categories;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  color: var(--color-fg-normal);
+  line-height: 1.5em;
+}
+
+article.post header .posted_at {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: posted_at;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  font-size: 0.75rem;
+  color: var(--color-fg-faint);
+  line-height: 1.2em;
+}
+
+article.post header .posted_at .date {
+  margin-right: 1em;
+}
+
+article.post header .content {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: content;
 }
 
 .three-column .wp-block-column {
@@ -956,5 +1033,11 @@ article.post > h2 a, article.post > h2 a:hover {
     margin-left: 0;
     border-right: 0;
   }
+}
+
+img.wp-post-image {
+  border-radius: 25px;
+  -webkit-box-shadow: 4px 4px #aaaaaa;
+          box-shadow: 4px 4px #aaaaaa;
 }
 /*# sourceMappingURL=style.css.map */

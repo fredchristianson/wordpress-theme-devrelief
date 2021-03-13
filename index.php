@@ -1,23 +1,18 @@
 <?php
 
+date_default_timezone_set( 'America/New_York' );
 get_header();
 ?>
 <section id="dr-main">
 	<div class='posts'><?
-		if ( have_posts() ) :
-			while ( have_posts() ) : the_post(); 
-				?><article class="post"><?
-					if (!is_front_page()) {
-						?><h2><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2><?
-					}
-					the_content()
-				?></article><?
-			endwhile;
-		
-		else :
-			echo '<p>There are no posts!</p>';
-		
-		endif;
+		if( is_front_page() ) {
+			get_template_part( 'loop', 'home' );
+		} else if ( is_single() ) {
+			get_template_part( 'loop', 'single' );
+		} else {
+			get_template_part( 'loop' );
+		}
+			
 	?></div><?
 	get_template_part( 'template/sidebar/sidebar', 'primary' ); 
 	get_template_part( 'template/sidebar/sidebar', 'secondary' ); 

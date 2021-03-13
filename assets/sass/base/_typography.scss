@@ -50,7 +50,8 @@ article {
 
 @mixin text5 {
   @include font-normal;
-  color: var(--color-fg-light);
+  font-size: 0.75rem;
+  color: var(--color-fg-faint);
   line-height: 1.2em;
 }
 

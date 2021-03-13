@@ -5,3 +5,71 @@ body {
   color: $text-color;
   font: normal 125% / 1.4 $text-font-stack;
 }
+
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+article {
+  margin-bottom: 2rem;
+}
+
+
+
+/*
+* create a hierarchy of text styles (like h1/h2/h3/... )
+* text1 is "most significant" to text6 least.
+* These can be used as either a mixin or style
+*/
+
+@mixin text1 {
+  @include font-large;
+  color: var(--color-fg-bold);
+  line-height: 2em;
+}
+
+@mixin text2 {
+  @include font-medium;
+  color: var(--color-fg-bold);
+  line-height: 1.5em;
+}
+
+@mixin text3 {
+  @include font-medium;
+  color: var(--color-fg-normal);
+  font-weight: 400;
+  line-height: 1.5em;
+} 
+
+@mixin text4 {
+  @include font-normal;
+  color: var(--color-fg-normal);
+  line-height: 1.5em;
+}
+
+@mixin text5 {
+  @include font-normal;
+  color: var(--color-fg-light);
+  line-height: 1.2em;
+}
+
+.text1 {
+  @include text1;
+}
+
+.text2 {
+  @include text2
+}
+
+.text3 {
+  @include text3
+}
+
+.text4 {
+  @include text4;
+}
+
+.text5 {
+  @include text5;
+}

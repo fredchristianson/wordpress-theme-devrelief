@@ -349,11 +349,18 @@ template {
 
 html {
   --color-bg: white;
-  --color-fg: #444444;
+  --color-fg-bold: ##000000;
+  --color-fg-normal: #444444;
+  --color-fg-light: #777777;
+  --color-fg-faint: #aaaaaa;
   --color-hightlight-fg: #007cba;
   --color-brand-fg: #005a87;
   --color-link: #0f00e5;
+  --color-faint: rgba(0,0,0,0.05);
   --pad-normal: 0.25rem;
+  --small-gap: 1rem;
+  --medium-gap: 2rem;
+  --large-gap: 4rem;
   --max-width: 1600px;
 }
 
@@ -521,6 +528,65 @@ body {
   font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+p {
+  margin-bottom: 1.5rem;
+}
+
+article {
+  margin-bottom: 2rem;
+}
+
+/*
+* create a hierarchy of text styles (like h1/h2/h3/... )
+* text1 is "most significant" to text6 least.
+* These can be used as either a mixin or style
+*/
+.text1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.7rem;
+  color: var(--color-fg-bold);
+  line-height: 2em;
+}
+
+.text2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  color: var(--color-fg-bold);
+  line-height: 1.5em;
+}
+
+.text3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  color: var(--color-fg-normal);
+  font-weight: 400;
+  line-height: 1.5em;
+}
+
+.text4 {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  color: var(--color-fg-normal);
+  line-height: 1.5em;
+}
+
+.text5 {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  color: var(--color-fg-light);
+  line-height: 1.2em;
+}
+
 .dr-page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -530,6 +596,13 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100vh;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  color: var(--color-fg-normal);
+  font-weight: 400;
+  line-height: 1.5em;
 }
 
 #dr-main {
@@ -551,7 +624,18 @@ body {
   -ms-grid-row-span: 3;
   -ms-grid-column: 1;
   grid-area: posts;
-  margin-left: 2rem;
+  margin-right: var(--small-gap);
+  padding-left: var(--medium-gap);
+  padding-right: var(--medium-gap);
+  border-right: 1px solid var(--color-faint);
+  margin-left: .25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  color: var(--color-fg-normal);
+  font-weight: 400;
+  line-height: 1.5em;
 }
 
 #dr-main .sidebar {
@@ -580,9 +664,21 @@ h1 {
   margin-bottom: 0.25rem;
 }
 
+@media (max-width: 782px) {
+  #dr-main {
+    --large-gap: 1rem;
+        grid-template-areas: "posts" "primary" "secondary";
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+  #dr-main .posts {
+    border-right: 0px;
+  }
+}
+
 header {
   background-color: #ffffff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--color-faint);
   padding: 0.25rem;
   position: relative;
   margin-bottom: 3rem;
@@ -636,7 +732,7 @@ header nav ul li a, header nav ul li a:hover, header nav ul li a:visited {
 
 header nav ul li a:hover {
   text-shadow: 0 0 20px blue;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   font-family: Roboto, sans-serif;
   line-height: 1.2rem;
@@ -772,6 +868,15 @@ footer h1 {
   font-size: 4vw;
 }
 
+.gview.pdf {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.acx-smw-social-icon-desc h2 {
+  display: none;
+}
+
 p.link.small {
   font-size: .75rem;
   font-weight: 400;
@@ -813,12 +918,32 @@ article.post > h2 a, article.post > h2 a:hover {
   text-decoration: none;
 }
 
-.gview.pdf {
+.three-column .wp-block-column {
   width: 100%;
-  min-height: 100vh;
+  border-right: 1px solid var(--color-faint);
+  padding-right: var(--medium-gap);
+  padding-left: 0;
+  margin-right: 0;
+  margin-left: var(--medium-gap);
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  color: var(--color-fg-normal);
+  line-height: 1.5em;
 }
 
-.acx-smw-social-icon-desc h2 {
-  display: none;
+.three-column .wp-block-column:last-child {
+  border-right: 0;
+}
+
+@media (max-width: 1000px) {
+  .three-column.wp-block-columns {
+    display: block;
+  }
+  .three-column .wp-block-column {
+    margin-left: 0;
+    border-right: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

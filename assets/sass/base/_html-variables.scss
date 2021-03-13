@@ -1,11 +1,19 @@
 html {
   --color-bg: white;
-  --color-fg: #444444;
+  --color-fg-bold: ##000000;
+  --color-fg-normal: #444444;
+  --color-fg-light: #777777;
+  --color-fg-faint: #aaaaaa;
   --color-hightlight-fg: #007cba;
   --color-brand-fg: #005a87;
   --color-link: #0f00e5;
-  --pad-normal: 0.25rem;
+  --color-faint: rgba(0,0,0,0.05);
 
+  --pad-normal: 0.25rem;
+  --small-gap: 1rem;
+  --medium-gap: 2rem;
+  --large-gap: 4rem;
+  
   --max-width: 1600px;
 
 }   

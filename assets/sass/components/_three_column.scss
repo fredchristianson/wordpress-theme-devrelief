@@ -1,0 +1,31 @@
+.three-column {
+    
+
+    .wp-block-column {
+        width: 100%;
+        border-right: 1px solid var(--color-faint);
+        padding-right: var(--medium-gap);
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: var(--medium-gap);
+        @include text4;
+    }
+
+    .wp-block-column:last-child {
+        border-right: 0;
+    }
+}
+
+    
+
+@media (max-width: 1000px) {
+    .three-column {
+        &.wp-block-columns {
+            display: block;
+        }
+        .wp-block-column {
+            margin-left: 0;    
+            border-right: 0;       
+        }
+    }
+}

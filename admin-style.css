@@ -1,0 +1,10 @@
+/* there aren't many styles for admin theme pages so they are done in .css rather than .scss */
+
+.devrelief-settings ul {
+    margin-left: 4rem;
+    list-style: none;
+}
+
+.devrelief-settings ul ul {
+    margin-left: 2rem;
+}

@@ -1040,4 +1040,14 @@ img.wp-post-image {
   -webkit-box-shadow: 4px 4px #aaaaaa;
           box-shadow: 4px 4px #aaaaaa;
 }
+
+ul {
+  margin-left: 4rem;
+  list-style: disc;
+}
+
+ul ul {
+  margin-left: 2rem;
+  list-style: circle;
+}
 /*# sourceMappingURL=style.css.map */

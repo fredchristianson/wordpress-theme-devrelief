@@ -10,6 +10,11 @@ function custom_theme_assets() {
  
 add_action( 'wp_enqueue_scripts', 'custom_theme_assets' );
 
+function devrelief_admin_head() {
+	wp_enqueue_style( 'dr-admin-style', get_theme_file_uri('/admin-style.css') , array(), time() , 'all' );
+}
+add_action( 'admin_head', 'devrelief_admin_head' );
+
 function devrelief_setup() {
 
 	register_nav_menus(
@@ -150,3 +155,58 @@ function devrelief_widgets_init() {
 
 }
 add_action( 'widgets_init', 'devrelief_widgets_init' );
+
+function exclude_category($query) {
+	if ($_SERVER['REQUEST_METHOD'] === 'GET' && !$query->get('cat')) {
+        $ignore_values = get_option('ignore_categories');
+		if ($ignore_values && count($ignore_values)>0) {
+			$negatives = array_map(function($val) {
+				return -$val;
+			},$ignore_values);
+			$exclude = implode(' ',$negatives);
+			var_dump($exclude);
+			$query->set('cat', $exclude);
+		}
+	}
+	return $query;
+}
+add_filter('pre_get_posts', 'exclude_category');
+
+function content_filter_settings_section () {
+	add_settings_section (
+		'content_filter_section', //section name for the section to add
+		'Filter Content', //section title visible on the page
+		'filter_content_description', //callback for section description
+		'dr_content_filter'//page to which section will be added.
+		);
+		
+	add_settings_field('ignore_categories',"Ignore Categories",'ignored_categories_callback','dr_content_filter','content_filter_section');
+
+
+	register_setting ( 'DevRelief', 'first_field_option');
+}
+	//callback for displaying setting description
+function filter_content_description () {
+	echo '<p>Most post lists will filter content based on these settings. </p>';
+}
+
+function ignored_categories_callback() {
+	echo 'Select categories to ignore in default content lists.';
+}
+//admin hook defined in functions.php. This calls the above function at
+// initialization time.
+add_action('admin_init', 'content_filter_settings_section' );
+
+function theme_settings_page(){}
+
+function add_dr_theme_menu_item()
+{
+	add_submenu_page('options-general.php','Developer Relief','DevRelief','administrator','devrelief-settings','devrelief_settings_callback');
+}
+
+function devrelief_settings_callback() {
+	get_template_part('devrelief-settings');
+}
+
+add_action("admin_menu", "add_dr_theme_menu_item");
+

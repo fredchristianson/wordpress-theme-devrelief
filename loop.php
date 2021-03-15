@@ -3,7 +3,7 @@
 $cat_Idea_ID = get_cat_ID('Idea');
 $cat_Draft_ID = get_cat_ID('Draft');
 
-$args = array(
+/* $args = array(
     'xcat' => array(-$cat_Draft_ID, -$cat_Idea_ID),
     'order_by' => 'date',
     'order'=>'DES'
@@ -15,9 +15,9 @@ if (!$queryArgs['cat']) {
 }
 
 $query = new WP_Query($queryArgs);
-
-if ( $query->have_posts() ) :
-    while ($query->have_posts() ) : $query->the_post(); 
+ */
+if ( have_posts() ) :
+    while (have_posts() ) : the_post(); 
         ?><article class="post"><?
             ?><header><?
             if (!is_front_page()) {
@@ -46,7 +46,7 @@ if ( $query->have_posts() ) :
             if ($categories) {
                 foreach($categories as $category) {
                     ?><span><? 
-                      echo $category->name.' '
+                      echo $category->name.' ('.$category->term_id.') '
                     ?></span><?
                 }
             }

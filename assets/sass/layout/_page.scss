@@ -36,6 +36,7 @@
     .sidebar {
         @include font-small;
         padding: 0.25rem;
+        overflow: hidden;
     }
 
     .sidebar.primary {

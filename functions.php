@@ -164,7 +164,6 @@ function exclude_category($query) {
 				return -$val;
 			},$ignore_values);
 			$exclude = implode(' ',$negatives);
-			var_dump($exclude);
 			$query->set('cat', $exclude);
 		}
 	}

@@ -1,3 +1,8 @@
+<?
+
+$logger = new DRLog\DRLogger("SidebarPrimary");
+$logger->debug("debug message");
+?>
 
 <div id="sidebar-primary" class="sidebar primary">
     

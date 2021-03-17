@@ -70,14 +70,23 @@ header.site-header {
     .site-title {
         grid-area: title;
         font-weight: 700;
-        font-size: 1.5rem;
+        font-size: 200%;
+        padding-left:1rem;
+        padding-top: 0rem;
+        margin-bottom: 0;
+        line-height: 100%;
         color: var(--color-brand);
+
+        a {
+            font-size: 100%;
+        }
     }
 
     .site-tagline {
         grid-area: tagline;
         font-weight: 400;
         font-size: 1rem;
+        padding-left: 1rem;
         
     }
 

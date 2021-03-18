@@ -1173,4 +1173,9 @@ ul ul {
   font-family: Roboto, sans-serif;
   line-height: 1rem;
 }
+
+#login h1 a, .login h1 a {
+  background-image: url(./images/dr-simple-blue.png);
+  position: relative;
+}
 /*# sourceMappingURL=style.css.map */

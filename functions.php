@@ -9,6 +9,7 @@ function custom_theme_assets() {
 }
  
 add_action( 'wp_enqueue_scripts', 'custom_theme_assets' );
+add_action( 'login_enqueue_scripts', 'custom_theme_assets' );
 
 function devrelief_admin_head() {
 	wp_enqueue_style( 'dr-admin-style', get_theme_file_uri('/admin-style.css') , array(), time() , 'all' );

@@ -589,6 +589,11 @@ h5, .text5 {
   line-height: 1.2em;
 }
 
+strong {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
 .dr-page {
   display: -webkit-box;
   display: -ms-flexbox;

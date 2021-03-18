@@ -209,3 +209,9 @@ function devrelief_settings_callback() {
 
 add_action("admin_menu", "add_dr_theme_menu_item");
 
+
+add_filter('show_admin_bar', '__return_false');
+
+if (is_singular() && comments_open() && (get_option('thread_comments') == 1)) {
+    wp_enqueue_script('comment-reply', 'wp-includes/js/comment-reply', array(), false, true);
+}

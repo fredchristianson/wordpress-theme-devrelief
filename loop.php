@@ -18,50 +18,7 @@ $query = new WP_Query($queryArgs);
  */
 if ( have_posts() ) :
     while (have_posts() ) : the_post(); 
-        ?><article class="post"><?
-            ?><header><?
-            if (!is_front_page()) {
-                ?><h2 class='title'><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2><?
-            }
-            ?><span class='posted_at'><?
-                ?><span class='date'><?
-                    the_time('F d, Y');
-                ?></span><span class='time'><?
-                    the_time();
-                ?></span><?
-            ?></span><?
-            $tags = get_the_tags();
-            ?><span class='tags'><?
-            if ($tags) {
-                foreach($tags as $tag) {
-                    ?><span><? 
-                      echo $tag->name.' '
-                    ?></span><?
-                }
-            }
-            ?></span><?
-
-            $categories = get_the_category();
-            ?><span class='categories'><?
-            if ($categories) {
-                foreach($categories as $category) {
-                    ?><span><? 
-                      echo $category->name.' ('.$category->term_id.') '
-                    ?></span><?
-                }
-            }
-            ?></span><?
-
-            ?><span class='thumbnail'><?
-                if (has_post_thumbnail()){
-                    the_post_thumbnail('thumbnail');
-                }
-            ?></span><?
-            ?></header><?
-            ?><section class='content'><?
-                the_content()
-            ?></section><?
-        ?></article><?
+    get_template_part('template/content/content','post');
     endwhile;
 else :
     echo '<p>There are no posts!</p>';

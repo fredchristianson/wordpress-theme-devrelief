@@ -1,0 +1,60 @@
+.post-comments {
+
+    ol.children {
+        margin-left: 4rem;
+        border-left: 1ps solid var(--color-fg-light);
+    }
+
+    article {
+        display: grid;
+        grid-template-areas:  
+            "meta  content"
+            "meta reply";
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto 1fr;
+    }
+
+    footer {
+        grid-area: meta;
+        margin-right: var(--medium-gap);
+        background-color: var(--color-bg-secondary);
+        color: var(--color-fg-secondary);
+        display: grid;
+        grid-template-areas: "image name"  "image date";
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto 1fr;
+
+        .vcard {
+            display: contents;
+            img {
+                grid-area: image;
+                margin-right: var(--small-gap);
+            }
+
+            .fn {
+                grid-area: name;
+            }
+
+            .says {
+                display: none;
+            }
+        
+
+        }
+        .comment-metadata {
+            grid-area: date;
+            @include font-small;
+        }
+    }
+
+    div.comment-content {
+        grid-area: content;
+    }
+
+    div.reply {
+        grid-area: reply;
+        a {
+            @include font-small;
+        }
+    }
+}

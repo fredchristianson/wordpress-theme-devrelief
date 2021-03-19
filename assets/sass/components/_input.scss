@@ -2,9 +2,12 @@
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
 
-button, input[type='submit'] {
-    border: 1px solid var(--color-border-normal);
+input {
     border-radius: var(--border-radius-small);
-    
+    border: 1px solid var(--color-border-normal);
     outline: 0;
+}
+
+input:focus {
+    border: 1px solid var(--color-border-focus);
 }

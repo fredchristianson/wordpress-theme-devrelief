@@ -18,7 +18,7 @@ $query = new WP_Query($queryArgs);
  */
 if ( have_posts() ) :
     while (have_posts() ) : the_post(); 
-    get_template_part('template/content/content','post');
+    get_template_part('template-parts/content/content','post');
     endwhile;
 else :
     echo '<p>There are no posts!</p>';

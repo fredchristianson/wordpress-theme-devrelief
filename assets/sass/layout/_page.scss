@@ -24,11 +24,8 @@
 
     .posts {
         grid-area: posts;
-        margin-right: var(--small-gap);
-        padding-left: var(--medium-gap);
-        padding-right: var(--medium-gap);
         border-right: 1px solid var(--color-faint);
-        margin-left: .25rem;
+        padding: var(--gap-large);
         @include text3;
 
     }

@@ -355,15 +355,20 @@ html {
   --color-fg-light: #777777;
   --color-fg-faint: #aaaaaa;
   --color-hightlight-fg: #007cba;
-  --color-brand-fg: #005a87;
-  --color-link: #0f00e5;
+  --color-brand-fg: #2457AA;
+  --color-link: #2457AA;
   --color-faint: rgba(0,0,0,0.05);
+  --color-bg-menu: #2457aa;
+  --color-fg-menu: #ffffff;
+  --color-border-normal: #777777;
+  --color-border-focus: #77ff77;
   --color-bg-secondary: #aaaaaa;
   --color-fg-secondary: #004477;
   --pad-normal: 0.25rem;
-  --small-gap: 1rem;
-  --medium-gap: 2rem;
-  --large-gap: 4rem;
+  --gap-small: 0.25rem;
+  --gap-medium: 1rem;
+  --gap-large: 4rem;
+  --border-radius-small: 6px;
   --max-width: 1600px;
 }
 
@@ -457,7 +462,7 @@ html {
  * Basic styles for links
  */
 a {
-  color: #0f00e5;
+  color: #2457AA;
   text-decoration: none;
 }
 
@@ -633,11 +638,8 @@ strong {
   -ms-grid-row-span: 3;
   -ms-grid-column: 1;
   grid-area: posts;
-  margin-right: var(--small-gap);
-  padding-left: var(--medium-gap);
-  padding-right: var(--medium-gap);
   border-right: 1px solid var(--color-faint);
-  margin-left: .25rem;
+  padding: var(--gap-large);
   font-size: 1.25rem;
   font-weight: 700;
   font-family: Roboto, sans-serif;
@@ -699,12 +701,12 @@ h1 {
 header.site-header {
   background-color: #ffffff;
   border-bottom: 1px solid var(--color-faint);
-  padding: 0.25rem;
+  padding: 0;
+  margin: 0;
   position: relative;
-  margin-bottom: 3rem;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "logo title . social social" "logo tagline . . user" " logo . . . ." ". menu menu menu menu ";
+      grid-template-areas: "logo title . social social" "logo tagline . . user" " logo . . . ." "menu menu menu menu menu ";
   -ms-grid-columns: min-content auto 1fr auto auto;
       grid-template-columns: -webkit-min-content auto 1fr auto auto;
       grid-template-columns: min-content auto 1fr auto auto;
@@ -713,12 +715,14 @@ header.site-header {
 
 header.site-header nav {
   -ms-grid-row: 4;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
   grid-area: menu;
   -ms-flex-item-align: right;
       -ms-grid-row-align: right;
       align-self: right;
+  background-color: var(--color-bg-menu);
+  padding: var(--gap-small) var(--gap-medium) var(--gap-small) var(--gap-medium);
 }
 
 header.site-header nav ul {
@@ -744,14 +748,14 @@ header.site-header nav ul li a, header.site-header nav ul li a:hover, header.sit
   font-family: Roboto, sans-serif;
   line-height: 1.2rem;
   background-color: transparent;
-  color: #000000;
+  color: var(--color-fg-menu);
   text-decoration: none;
   -webkit-transition: 100ms;
   transition: 100ms;
 }
 
 header.site-header nav ul li a:hover {
-  text-shadow: 0 0 20px blue;
+  text-shadow: 0 0 20px var(--color-fg-menu);
   font-size: 1.25rem;
   font-weight: 700;
   font-family: Roboto, sans-serif;
@@ -790,13 +794,16 @@ header.site-header .site-logo img {
 }
 
 header.site-header .site-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2.0rem;
+  line-height: 2.1rem;
+  font-weight: 700;
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: title;
-  font-weight: 700;
-  font-size: 200%;
   padding-left: 1rem;
   padding-top: 0rem;
+  padding-right: var(--gap-medium);
   margin-bottom: 0;
   line-height: 100%;
   color: var(--color-brand);
@@ -822,6 +829,7 @@ header.site-header .social-widgets {
   grid-area: social;
   position: absolute;
   right: 0;
+  padding-right: var(--gap-medium);
   white-space: nowrap;
 }
 
@@ -831,6 +839,7 @@ header.site-header .user {
   grid-area: user;
   position: absolute;
   right: 0;
+  padding-right: var(--gap-medium);
   white-space: nowrap;
 }
 
@@ -931,6 +940,22 @@ p.link.download a::after {
   font-weight: 900;
   position: absolute;
   right: 0px;
+}
+
+button, input[type='submit'] {
+  border: 1px solid var(--color-border-normal);
+  border-radius: var(--border-radius-small);
+  outline: 0;
+}
+
+input {
+  border-radius: var(--border-radius-small);
+  border: 1px solid var(--color-border-normal);
+  outline: 0;
+}
+
+input:focus {
+  border: 1px solid var(--color-border-focus);
 }
 
 .edit.image-list img {

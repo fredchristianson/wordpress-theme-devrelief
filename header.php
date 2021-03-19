@@ -8,6 +8,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head() ?>
 </head>
@@ -16,9 +18,12 @@
 <div class='dr-page'>
  
 <header class="site-header">
-<?php if ( has_custom_logo() ) : ?>
+	<?php if ( has_custom_logo() ) { ?>
 		<div class="site-logo"><?php the_custom_logo(); ?></div>
-	<?php endif; ?>
+	<? } else { ?>
+		<div class="site-logo"><img width="200" height="200" src="wp-content/themes/devrelief/images/dr-simple-blue.png" class="custom-logo"></div>
+
+	<?php } ?>
 	<h1 class='site-title' ><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 	<h4 class='site-tagline'><?php bloginfo( 'description' ); ?></h4>
     <?php if ( has_nav_menu( 'menu-primary' ) ) : ?>
@@ -35,9 +40,9 @@
 		</nav><!-- #site-navigation -->
 	<?php endif; ?>
 	<div class='social-widgets'>
-		<?php get_template_part( 'template/header/header', 'widgets' ); ?> 
+		<?php get_template_part( 'template-parts/header/header', 'widgets' ); ?> 
 	</div>
 	<div class='user'>
-		<?php get_template_part( 'template/header/header', 'user' ); ?> 
+		<?php get_template_part( 'template-parts/header/header', 'user' ); ?> 
 	</div>
 </header>

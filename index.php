@@ -14,8 +14,8 @@ get_header();
 		}
 			
 	?></div><?
-	get_template_part( 'template/sidebar/sidebar', 'primary' ); 
-	get_template_part( 'template/sidebar/sidebar', 'secondary' ); 
+	get_template_part( 'template-parts/sidebar/sidebar', 'primary' ); 
+	get_template_part( 'template-parts/sidebar/sidebar', 'secondary' ); 
 
 
 ?></section> <!-- #dr-main' --><?

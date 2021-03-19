@@ -14,7 +14,7 @@
 			<?php endif; ?>
 
 	<?php
-		get_template_part( 'template/footer/footer', 'widgets' );
+		get_template_part( 'template-parts/footer/footer', 'widgets' );
 	?>
 </footer>
  

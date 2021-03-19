@@ -4,23 +4,24 @@
 header.site-header {
     background-color: #ffffff;
     border-bottom: 1px solid var(--color-faint);
-    padding: 0.25rem;
+    padding: 0;
+    margin: 0;
     position: relative;
-    margin-bottom: 3rem;
     
     display: grid;
     grid-template-areas: 
         "logo title . social social"
         "logo tagline . . user"
         " logo . . . ."
-        ". menu menu menu menu ";
+        "menu menu menu menu menu ";
     grid-template-columns: min-content auto 1fr auto auto;
     gap: 0 .25rem ;
 
     nav {
         grid-area: menu;
         align-self: right;
-
+        background-color: var(--color-bg-menu);
+        padding: var(--gap-small) var(--gap-medium) var(--gap-small) var(--gap-medium) ;
         ul {
             display: flex;
             li {
@@ -31,14 +32,14 @@ header.site-header {
                 a, a:hover, a:visited {
                     @include font-normal;
                     background-color: transparent;
-                    color: #000000;
+                    color: var(--color-fg-menu);
                     text-decoration: none;
                    
                     transition: 100ms;
                 }
 
                 a:hover {
-                    text-shadow: 0 0 20px blue;
+                    text-shadow: 0 0 20px var(--color-fg-menu);
                     @include font-medium;
                 }
 
@@ -68,11 +69,11 @@ header.site-header {
     }
 
     .site-title {
+        @include font-site-title;
         grid-area: title;
-        font-weight: 700;
-        font-size: 200%;
         padding-left:1rem;
         padding-top: 0rem;
+        padding-right: var(--gap-medium);
         margin-bottom: 0;
         line-height: 100%;
         color: var(--color-brand);
@@ -94,7 +95,8 @@ header.site-header {
         grid-area: social;
         position: absolute;
         right: 0;
-        
+        padding-right: var(--gap-medium);
+
         white-space: nowrap;
     }
 
@@ -102,6 +104,8 @@ header.site-header {
         grid-area: user;
         position: absolute;
         right: 0;
+        padding-right: var(--gap-medium);
+
         white-space: nowrap;
     }
 }

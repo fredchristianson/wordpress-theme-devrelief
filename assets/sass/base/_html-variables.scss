@@ -6,17 +6,24 @@ html {
   --color-fg-light: #777777;
   --color-fg-faint: #aaaaaa;
   --color-hightlight-fg: #007cba;
-  --color-brand-fg: #005a87;
-  --color-link: #0f00e5;
+  --color-brand-fg: #2457AA;
+  --color-link: #2457AA;
   --color-faint: rgba(0,0,0,0.05);
+  --color-bg-menu: #2457aa;
+  --color-fg-menu: #ffffff;
 
+  --color-border-normal: #777777;
+  --color-border-focus: #77ff77;
   --color-bg-secondary: #aaaaaa;
   --color-fg-secondary: #004477;
 
   --pad-normal: 0.25rem;
-  --small-gap: 1rem;
-  --medium-gap: 2rem;
-  --large-gap: 4rem;
+  --gap-small: 0.25rem;
+  --gap-medium: 1rem;
+  --gap-large: 4rem;
+
+  
+  --border-radius-small: 6px;
   
   --max-width: 1600px;
 

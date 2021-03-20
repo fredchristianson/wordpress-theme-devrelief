@@ -12,4 +12,4 @@ if (have_comments()) : ?>
     <?
 endif;
 
-comment_form();
+comment_form(array('title_reply'=>"Leave A Comment","title_reply_to"=>"Reply to %s"));

@@ -51,7 +51,39 @@ article {
 @mixin text5 {
   @include font-normal;
   font-size: 0.75rem;
-  color: var(--color-fg-faint);
+  color: var(--color-neutral-300);
+  line-height: 1.2em;
+}
+
+@mixin text-100 {
+  @include font-large;
+  color: var(--color-fg-bold);
+  line-height: 2em;
+}
+
+@mixin text-200 {
+  @include font-medium;
+  color: var(--color-fg-bold);
+  line-height: 1.5em;
+}
+
+@mixin text-300 {
+  @include font-medium;
+  color: var(--color-fg-normal);
+  font-weight: 400;
+  line-height: 1.5em;
+} 
+
+@mixin text-400 {
+  @include font-normal;
+  color: var(--color-fg-normal);
+  line-height: 1.5em;
+}
+
+@mixin text-500 {
+  @include font-normal;
+  font-size: 0.75rem;
+  color: var(--color-neutral-300);
   line-height: 1.2em;
 }
 

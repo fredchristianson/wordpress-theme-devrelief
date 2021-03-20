@@ -351,12 +351,13 @@ html {
   --color-neutral-100: #000000;
   --color-neutral-200: #444444;
   --color-neutral-300: #777777;
-  --color-neutral-400: #cccccc;
+  --color-neutral-400: #dddddd;
   --color-neutral-500: #ffffff;
   --color-primary-100: #0b1a33;
   --color-primary-200: #193d77;
   --color-primary-300: #2457AA;
   --color-primary-400: #6689c4;
+  --color-primary-400-50: rgba(102,137,196,.5);
   --color-primary-500: #d3ddee;
   --color-secondary-100: #302b06;
   --color-secondary-200: #a99716;
@@ -464,8 +465,13 @@ table {
 }
 
 html {
+  --font-size-300: clamp(16px,calc(.7rem + .25vw),28px);
+  --font-size-200: calc( var(--font-size-300) * 0.75);
+  --font-size-100: calc( var(--font-size-200) * 0.75);
+  --font-size-400: calc( var(--font-size-300) * 1.25);
+  --font-size-500: calc( var(--font-size-400) * 1.25);
   font-family: Roboto, sans-serif;
-  font-size: clamp(16px, calc(.7rem + .25vw), 28px);
+  font-size: var(--font-size-300);
   font-weight: 400;
   line-height: 1.7;
 }
@@ -615,7 +621,7 @@ h3, .text3 {
 }
 
 h4, .text4 {
-  font-size: 1rem;
+  font-size: var(--font-size-300);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1.2rem;
@@ -624,12 +630,12 @@ h4, .text4 {
 }
 
 h5, .text5 {
-  font-size: 1rem;
+  font-size: var(--font-size-300);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1.2rem;
   font-size: 0.75rem;
-  color: var(--color-fg-faint);
+  color: var(--color-neutral-300);
   line-height: 1.2em;
 }
 
@@ -688,7 +694,7 @@ strong {
 }
 
 #dr-main .sidebar {
-  font-size: .75rem;
+  font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1rem;
@@ -781,7 +787,7 @@ header.site-header nav ul li {
 }
 
 header.site-header nav ul li a, header.site-header nav ul li a:hover, header.site-header nav ul li a:visited {
-  font-size: 1rem;
+  font-size: var(--font-size-300);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1.2rem;
@@ -903,7 +909,7 @@ footer .sidebar.footer {
 }
 
 footer nav {
-  font-size: .75rem;
+  font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1rem;
@@ -954,7 +960,7 @@ footer h1 {
 }
 
 p.link.small {
-  font-size: .75rem;
+  font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1rem;
@@ -1122,7 +1128,7 @@ article.post header .tags {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: tags;
-  font-size: 1rem;
+  font-size: var(--font-size-300);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1.2rem;
@@ -1135,7 +1141,7 @@ article.post header .categories {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: categories;
-  font-size: 1rem;
+  font-size: var(--font-size-300);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1.2rem;
@@ -1147,12 +1153,12 @@ article.post header .posted_at {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: posted_at;
-  font-size: 1rem;
+  font-size: var(--font-size-300);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1.2rem;
   font-size: 0.75rem;
-  color: var(--color-fg-faint);
+  color: var(--color-neutral-300);
   line-height: 1.2em;
 }
 
@@ -1161,7 +1167,7 @@ article.post header .posted_at .date {
 }
 
 article.post header .content {
-  -ms-grid-row: 1;
+  -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: content;
 }
@@ -1173,7 +1179,7 @@ article.post header .content {
   padding-left: 0;
   margin-right: 0;
   margin-left: var(--medium-gap);
-  font-size: 1rem;
+  font-size: var(--font-size-300);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1.2rem;
@@ -1212,7 +1218,12 @@ ul ul {
 }
 
 .post-comments {
-  background-color: var(--color-primary-200);
+  background-color: var(--color-neutral-500);
+  border-left: 1px solid var(--color-primary-300);
+  border: 4px solid var(--color-primary-500);
+  border-radius: var(--gap-small);
+  margin-bottom: var(--gap-large);
+  padding: var(--gap-small);
 }
 
 .post-comments li {
@@ -1221,41 +1232,30 @@ ul ul {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
+  border-bottom: 1px solid var(--color-primary-500);
+  margin-bottom: var(--gap-small);
 }
 
 .post-comments ol.children {
-  margin-left: .5rem;
-  border-left: 1px solid var(--color-neutral-400);
+  border-left: 1px solid var(--color-primary-500);
+  margin-left: var(--gap-medium);
 }
 
 .post-comments article {
   display: -ms-grid;
   display: grid;
   margin-bottom: var(--gap-small);
-  background-color: var(--color-neutral-400);
-      grid-template-areas: "meta  content" "meta reply";
+  padding-left: var(--gap-small);
+  background-color: var(--color-neutral-500);
+      grid-template-areas: "image name" "image date" "image moderation" "image ." ". content" ". reply";
   -ms-grid-columns: auto 1fr;
       grid-template-columns: auto 1fr;
-  -ms-grid-rows: auto 1fr;
-      grid-template-rows: auto 1fr;
+  -ms-grid-rows: auto auto auto var(--gap-small) 1fr auto;
+      grid-template-rows: auto auto auto var(--gap-small) 1fr auto;
 }
 
 .post-comments footer {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
-  grid-area: meta;
-  margin-right: var(--medium-gap);
-  background-color: var(--color-primary-400);
-  color: var(--color-neutral-500);
-  display: -ms-grid;
-  display: grid;
-      grid-template-areas: "image name"  "image date" "moderation moderation";
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
-  -ms-grid-rows: auto auto 1fr;
-      grid-template-rows: auto auto 1fr;
-  min-width: 25ch;
+  display: contents;
 }
 
 .post-comments footer .vcard {
@@ -1264,16 +1264,22 @@ ul ul {
 
 .post-comments footer .vcard img {
   -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
+  -ms-grid-row-span: 4;
   -ms-grid-column: 1;
   grid-area: image;
-  margin-right: var(--gap-small);
+  margin-right: var(--gap-medium);
+  border-radius: 9999px;
 }
 
 .post-comments footer .vcard .fn {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: name;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.5rem;
+  color: var(--color-primary-300);
 }
 
 .post-comments footer .vcard .says {
@@ -1284,24 +1290,44 @@ ul ul {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: date;
-  font-size: .75rem;
+  font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1rem;
 }
 
 .post-comments footer .comment-metadata a {
-  color: var(--color-neutral-100);
+  color: var(--color-neutral-300);
+}
+
+.post-comments footer .comment-metadata a.comment-edit-link {
+  margin-left: var(--gap-small);
+  background-color: var(--color-primary-300);
+  color: var(--color-neutral-400);
+  border-radius: var(--gap-small);
+  padding: var(--gap-small);
+  position: relative;
+  padding-right: 1.75em;
+}
+
+.post-comments footer .comment-metadata a.comment-edit-link::after {
+  content: '\f044';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  line-height: 200%;
+  text-align: center;
+  right: .25em;
+  top: 0;
 }
 
 .post-comments footer .comment-awaiting-moderation {
-  font-size: .75rem;
+  font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1rem;
   -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 2;
   grid-area: moderation;
   color: transparent;
   width: auto;
@@ -1309,28 +1335,58 @@ ul ul {
 }
 
 .post-comments div.comment-content {
-  -ms-grid-row: 1;
+  -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: content;
-  padding-left: var(--gap-medium);
+}
+
+.post-comments div.comment-content p {
+  margin-bottom: var(--gap-small);
 }
 
 .post-comments div.reply {
-  -ms-grid-row: 2;
+  -ms-grid-row: 6;
   -ms-grid-column: 2;
   grid-area: reply;
 }
 
-.post-comments div.reply a {
-  font-size: .75rem;
+.post-comments div.reply a, .post-comments div.reply a:hover {
+  padding: var(--gap-small);
+  padding: var(--gap-small);
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  color: var(--color-fg-normal);
+  font-weight: 400;
+  line-height: 1.5em;
+  text-decoration: none;
+  background-color: var(--color-primary-300);
+  color: var(--color-neutral-500);
+  border-radius: var(--gap-small);
+  margin-bottom: var(--gap-small);
+  font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1rem;
-  padding-left: var(--gap-medium);
+  position: relative;
+  padding-left: 1.5em;
+  text-decoration: none;
+}
+
+.post-comments div.reply a::before, .post-comments div.reply a:hover::before {
+  content: '\f3e5';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  line-height: 200%;
+  text-align: center;
+  left: .25em;
+  top: 0;
 }
 
 .sidebar {
-  font-size: .75rem;
+  font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1rem;
@@ -1395,9 +1451,10 @@ ul ul {
 
 @use map;
 #respond {
-  background-color: var(--color-secondary-300);
+  background-color: var(--color-secondary-400);
+  border-radius: var(--gap-small);
   padding: var(--gap-medium);
-  font-size: .75rem;
+  font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1rem;
@@ -1433,9 +1490,42 @@ ul ul {
   width: unset;
 }
 
-#respond .submit {
-  width: auto !important;
+#respond .form-submit {
   padding: var(--gap-small);
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  color: var(--color-fg-normal);
+  font-weight: 400;
+  line-height: 1.5em;
+  text-decoration: none;
+  background-color: var(--color-primary-300);
+  color: var(--color-neutral-500);
+  border-radius: var(--gap-small);
+  margin-bottom: var(--gap-small);
+  position: relative;
+  padding-right: 1.75em;
+  width: auto;
+  display: inline-block;
+}
+
+#respond .form-submit::after {
+  content: '\f35a';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  line-height: 200%;
+  text-align: center;
+  right: .25em;
+  top: 0;
+}
+
+#respond .form-submit .submit {
+  width: auto !important;
+  background-color: transparent;
+  color: inherit;
+  border: 0;
 }
 
 @media (max-width: 768px) {

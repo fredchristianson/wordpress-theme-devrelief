@@ -1,7 +1,8 @@
 @use map;
 
 #respond {
-    background-color: var(--color-secondary-300);
+    background-color: var(--color-secondary-400);
+    border-radius: var(--gap-small);
     padding: var(--gap-medium);
 
     @include font-small;
@@ -32,9 +33,17 @@
         }
     }
 
-    .submit {
-        width: auto !important;
-        padding: var(--gap-small);
+    .form-submit {
+        @include button-300;
+        @include icon-submit-right;
+        width: auto;
+        display: inline-block;
+        .submit {
+            width: auto !important;
+            background-color: transparent;
+            color: inherit;
+            border: 0;
+        }
     }
 }
 

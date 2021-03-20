@@ -1,0 +1,60 @@
+
+@mixin font-awesome {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    line-height: 200%;
+    text-align: center;
+}
+
+@mixin icon-reply-right {
+    position: relative;
+    padding-right: 1.5em;
+
+    &::after {
+        content: '\f3e5';
+        @include font-awesome;
+        right: .25em;
+        top: 0;
+    }
+}
+
+
+
+@mixin icon-reply-left {
+    position: relative;
+    padding-left: 1.5em;
+
+    &::before {
+        content: '\f3e5';
+        @include font-awesome;
+        
+        left: .25em;
+        top: 0;
+    }
+}
+
+
+@mixin icon-edit-right {
+    position: relative;
+    padding-right: 1.75em;
+
+    &::after {
+        content: '\f044';
+        @include font-awesome;
+        right: .25em;
+        top: 0;
+    }
+}
+
+@mixin icon-submit-right {
+    position: relative;
+    padding-right: 1.75em;
+
+    &::after {
+        content: '\f35a';
+        @include font-awesome;
+        right: .25em;
+        top: 0;
+    }
+}

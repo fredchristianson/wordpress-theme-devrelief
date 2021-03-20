@@ -15,7 +15,7 @@
 </head>
  
 <body <?php body_class(); ?>>
-<div class='dr-page'>
+<div class='dr-page palette-1'>
  
 <header class="site-header">
 	<?php if ( has_custom_logo() ) { ?>

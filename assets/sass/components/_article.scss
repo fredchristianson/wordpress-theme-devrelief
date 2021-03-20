@@ -1,3 +1,50 @@
+.content.multiple {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-medium);
+    height: min-content;
+
+    article.post {
+        height: min-content;
+        flex: 1 1 300px;
+        background-color: var(--color-primary-500);
+        header {
+            position: relative;
+            display: grid;
+            grid-template-areas: 
+                "thumbnail" 
+                "title"
+                "posted_at"
+                "categories"
+                "tags"
+                "content";
+            grid-template-rows: auto auto auto auto auto auto;
+            grid-template-columns: auto;
+
+            > * {
+                margin-left: var(--gap-medium);
+            }
+            .thumbnail {
+                margin: 0px;
+                width: 100%;
+                max-width: 300px;
+                img {
+                    margin: 0;
+                    width: 100%;
+                    height: unset;
+                    box-shadow: unset;
+                    border-radius: unset;
+                }
+            }
+        }
+
+        .content {
+            margin-left: var(--gap-medium);
+            margin-right: var(--gap-medium);
+        }
+    }
+}
+
 article.post {
     header {
         display: grid;

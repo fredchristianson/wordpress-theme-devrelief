@@ -1,0 +1,21 @@
+.sidebar {
+    @include font-small;
+    padding: var(--gap-small);
+    overflow: hidden;
+}
+
+.sidebar.primary {
+    grid-area: primary;
+    background-color: var(--color-bg-primary-sidebar);
+    color: var(--color-fg-primary-sidebar);
+
+    h1, h2 {
+        @include font-medium;
+        color: var(--color-fg-highlight-primary-sidebar);
+    }
+}
+
+.sidebar.secondary {
+    grid-area: secondary;
+    background-color: #ffffff;
+}

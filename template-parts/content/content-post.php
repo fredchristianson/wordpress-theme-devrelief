@@ -14,9 +14,11 @@
     ?><span class='tags'><?
     if ($tags) {
         foreach($tags as $tag) {
-            ?><span><? 
-                echo $tag->name.' '
-            ?></span><?
+            ?>
+                <a href='<?echo get_tag_link($tag)?>'>
+                    <span class='tag tag-<?echo trim(str_replace(array(':',' ',';','.','?','\r','\n','\t'),'-',strtolower($tag->name))," \n\r\t\v\0;?,.?;:-")?>'><? 
+                        echo $tag->name
+                    ?></span></a><?
         }
     }
     ?></span><?
@@ -25,9 +27,13 @@
     ?><span class='categories'><?
     if ($categories) {
         foreach($categories as $category) {
-            ?><span><? 
-                echo $category->name.' ('.$category->term_id.') '
-            ?></span><?
+            ?>
+            <a href='<?echo get_category_link($category)?>'>
+            <span class='category category-<?echo  trim(str_replace(array(':',' ',';','.','?','\r','\n','\t'),'-',strtolower($category->name))," \n\r\t\v\0;?,.?;:-")?>'><? 
+                echo $category->name;
+                
+            ?></span>
+            </a><?
         }
     }
     ?></span><?
@@ -45,6 +51,11 @@
     ?></span><?
     ?></header><?
     ?><section class='content'><?
-        the_content()
+        if (is_single()) {
+            the_content();
+        } else {
+            the_excerpt();
+            ?><a href='<?the_permalink()?>'>read more</a><?
+        }
     ?></section><?
 ?></article><?

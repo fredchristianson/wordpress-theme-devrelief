@@ -348,28 +348,65 @@ template {
 }
 
 html {
-  --color-bg: white;
-  --color-fg: #444444;
-  --color-fg-bold: #000000;
-  --color-fg-normal: #444444;
-  --color-fg-light: #777777;
-  --color-fg-faint: #aaaaaa;
-  --color-hightlight-fg: #007cba;
-  --color-brand-fg: #2457AA;
-  --color-link: #2457AA;
-  --color-faint: rgba(0,0,0,0.05);
-  --color-bg-menu: #2457aa;
-  --color-fg-menu: #ffffff;
+  --color-neutral-100: #000000;
+  --color-neutral-200: #444444;
+  --color-neutral-300: #777777;
+  --color-neutral-400: #cccccc;
+  --color-neutral-500: #ffffff;
+  --color-primary-100: #0b1a33;
+  --color-primary-200: #193d77;
+  --color-primary-300: #2457AA;
+  --color-primary-400: #6689c4;
+  --color-primary-500: #d3ddee;
+  --color-secondary-100: #302b06;
+  --color-secondary-200: #a99716;
+  --color-secondary-300: #F2D81F;
+  --color-secondary-400: #f6e462;
+  --color-secondary-500: #fcf7d2;
+  --color-bg: var(--color-neutral-500);
+  --color-fg: var(--color-neutral-200);
+  --color-fg-bold: var(--color-neutral-100);
+  --color-fg-normal: var(--color-neutral-200);
+  --color-fg-light: var(--color-neutral-300);
+  --color-fg-faint: var(--color-neutral-400);
+  --color-hightlight-fg: var(--color-primary-200);
+  --color-brand-fg: var(--color-primary-200);
+  --color-link: var(--color-primary-200);
+  --color-faint: rgba(102, 137, 196, 0.7);
+  --color-bg-menu: var(--color-primary-400);
+  --color-fg-menu: var(--color-neutral-500);
+  --color-bg-primary-sidebar: #e4f7f6;
+  --color-fg-primary-sidebar: #444444;
+  --color-fg-highlight-primary-sidebar: #0ab3af;
   --color-border-normal: #777777;
   --color-border-focus: #77ff77;
   --color-bg-secondary: #aaaaaa;
   --color-fg-secondary: #004477;
+  --color-warning: #ff4444;
+  --color-bg-cat: var(--color-secondary-500);
+  --color-fg-cat: var(--color-neutral-200);
+  --color-border-cat: var(--color-neutral-400);
+  --color-bg-tag: var(--color-primary-500);
+  --color-fg-tag: var(--color-neutral-200);
+  --color-border-tag: var(--color-neutral-400);
+  --color-cat-development: #00ff00;
+  --color-cat-wordpress: #d1eef8;
+  --color-cat-smarthome: #fcdc00;
   --pad-normal: 0.25rem;
   --gap-small: 0.25rem;
   --gap-medium: 1rem;
   --gap-large: 4rem;
+  --border-thin: 1px;
   --border-radius-small: 6px;
   --max-width: 1600px;
+}
+
+html .palette-1-off {
+  --color-bg-menu: var(--color-primary-400);
+  --color-fg-menu: var(--color-neutral-400);
+  --color-bg-primary-sidebar: rgba(38,205,222,.1);
+  --color-fg-primary-sidebar: #444444;
+  --color-fg-highlight-primary-sidebar: rgb(38, 205, 222);
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -601,6 +638,7 @@ strong {
   font-weight: 700;
 }
 
+@use map;
 .dr-page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -662,14 +700,12 @@ strong {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: primary;
-  background-color: #eeeeee;
 }
 
 #dr-main .sidebar.secondary {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: secondary;
-  background-color: #ffffff;
 }
 
 #dr-main ul {
@@ -686,7 +722,7 @@ h1 {
   margin-bottom: 0.25rem;
 }
 
-@media (max-width: 782px) {
+@media (max-width: 768px) {
   #dr-main {
     --large-gap: 1rem;
         grid-template-areas: "posts" "primary" "secondary";
@@ -718,14 +754,16 @@ header.site-header nav {
   -ms-grid-column: 1;
   -ms-grid-column-span: 5;
   grid-area: menu;
-  -ms-flex-item-align: right;
-      -ms-grid-row-align: right;
-      align-self: right;
+  -ms-flex-item-align: left;
+      -ms-grid-row-align: left;
+      align-self: left;
   background-color: var(--color-bg-menu);
   padding: var(--gap-small) var(--gap-medium) var(--gap-small) var(--gap-medium);
+  overflow: hidden;
 }
 
 header.site-header nav ul {
+  margin-left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -770,10 +808,10 @@ header.site-header nav ul li.current-menu-item a {
 }
 
 header.site-header nav ul li:first-child {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  text-align: right;
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  text-align: left;
 }
 
 header.site-header nav ul:hover a {
@@ -963,6 +1001,63 @@ input:focus {
   width: 20%;
 }
 
+.content.multiple {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: var(--gap-medium);
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+
+.content.multiple article.post {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
+  background-color: var(--color-primary-500);
+}
+
+.content.multiple article.post header {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "thumbnail"  "title" "posted_at" "categories" "tags" "content";
+  -ms-grid-rows: auto auto auto auto auto auto;
+      grid-template-rows: auto auto auto auto auto auto;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+}
+
+.content.multiple article.post header > * {
+  margin-left: var(--gap-medium);
+}
+
+.content.multiple article.post header .thumbnail {
+  margin: 0px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.content.multiple article.post header .thumbnail img {
+  margin: 0;
+  width: 100%;
+  height: unset;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+  border-radius: unset;
+}
+
+.content.multiple article.post .content {
+  margin-left: var(--gap-medium);
+  margin-right: var(--gap-medium);
+}
+
 article.post header {
   display: -ms-grid;
   display: grid;
@@ -1116,14 +1211,28 @@ ul ul {
   list-style: circle;
 }
 
+.post-comments {
+  background-color: var(--color-primary-200);
+}
+
+.post-comments li {
+  margin: 0;
+  padding: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
 .post-comments ol.children {
-  margin-left: 4rem;
-  border-left: 1ps solid var(--color-fg-light);
+  margin-left: .5rem;
+  border-left: 1px solid var(--color-neutral-400);
 }
 
 .post-comments article {
   display: -ms-grid;
   display: grid;
+  margin-bottom: var(--gap-small);
+  background-color: var(--color-neutral-400);
       grid-template-areas: "meta  content" "meta reply";
   -ms-grid-columns: auto 1fr;
       grid-template-columns: auto 1fr;
@@ -1137,15 +1246,16 @@ ul ul {
   -ms-grid-column: 1;
   grid-area: meta;
   margin-right: var(--medium-gap);
-  background-color: var(--color-bg-secondary);
-  color: var(--color-fg-secondary);
+  background-color: var(--color-primary-400);
+  color: var(--color-neutral-500);
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "image name"  "image date";
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
-  -ms-grid-rows: auto 1fr;
-      grid-template-rows: auto 1fr;
+      grid-template-areas: "image name"  "image date" "moderation moderation";
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  -ms-grid-rows: auto auto 1fr;
+      grid-template-rows: auto auto 1fr;
+  min-width: 25ch;
 }
 
 .post-comments footer .vcard {
@@ -1157,7 +1267,7 @@ ul ul {
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   grid-area: image;
-  margin-right: var(--small-gap);
+  margin-right: var(--gap-small);
 }
 
 .post-comments footer .vcard .fn {
@@ -1180,10 +1290,29 @@ ul ul {
   line-height: 1rem;
 }
 
+.post-comments footer .comment-metadata a {
+  color: var(--color-neutral-100);
+}
+
+.post-comments footer .comment-awaiting-moderation {
+  font-size: .75rem;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1rem;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: moderation;
+  color: transparent;
+  width: auto;
+  color: var(--color-warning);
+}
+
 .post-comments div.comment-content {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: content;
+  padding-left: var(--gap-medium);
 }
 
 .post-comments div.reply {
@@ -1197,6 +1326,122 @@ ul ul {
   font-weight: 400;
   font-family: Roboto, sans-serif;
   line-height: 1rem;
+  padding-left: var(--gap-medium);
+}
+
+.sidebar {
+  font-size: .75rem;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1rem;
+  padding: var(--gap-small);
+  overflow: hidden;
+}
+
+.sidebar.primary {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: primary;
+  background-color: var(--color-bg-primary-sidebar);
+  color: var(--color-fg-primary-sidebar);
+}
+
+.sidebar.primary h1, .sidebar.primary h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  color: var(--color-fg-highlight-primary-sidebar);
+}
+
+.sidebar.secondary {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: secondary;
+  background-color: #ffffff;
+}
+
+.categories .category {
+  border: 1px dotted var(--color-bg-cat);
+  background-color: var(--color-bg-cat);
+  color: var(--color-fg-cat);
+  padding: 1px 2px 1px 2px;
+  border-radius: var(--border-radius-small);
+  margin-right: var(--gap-small);
+  white-space: nowrap;
+}
+
+.categories .category.category-development {
+  background-color: var(--color-cat-development);
+}
+
+.categories .category.category-wordpress {
+  background-color: var(--color-cat-wordpress);
+}
+
+.categories .category.category-smarthome {
+  background-color: var(--color-cat-smarthome);
+}
+
+.tags .tag {
+  border: 1px dotted var(--color-border-tag);
+  background-color: var(--color-bg-tag);
+  color: var(--color-fg-tag);
+  padding: 1px 2px 1px 2px;
+  border-radius: var(--border-radius-small);
+  margin-right: var(--gap-small);
+  white-space: nowrap;
+}
+
+@use map;
+#respond {
+  background-color: var(--color-secondary-300);
+  padding: var(--gap-medium);
+  font-size: .75rem;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1rem;
+}
+
+#respond #cancel-comment-reply-link {
+  display: block;
+}
+
+#respond p {
+  position: relative;
+}
+
+#respond p label {
+  vertical-align: top;
+  display: inline-block;
+  width: 10ch;
+  text-align: right;
+}
+
+#respond p textarea, #respond p input {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2rem;
+  width: 75%;
+  max-width: 80ch;
+  font-weight: 400;
+}
+
+#respond .comment-form-cookies-consent input, #respond .comment-form-cookies-consent label {
+  text-align: left;
+  width: unset;
+}
+
+#respond .submit {
+  width: auto !important;
+  padding: var(--gap-small);
+}
+
+@media (max-width: 768px) {
+  #respond {
+    margin: 0;
+  }
 }
 
 #login h1 a, .login h1 a {

@@ -1,3 +1,4 @@
+@use map;
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
@@ -38,12 +39,12 @@
 
     .sidebar.primary {
         grid-area: primary;
-        background-color: #eeeeee;
+        
     }
 
     .sidebar.secondary {
         grid-area: secondary;
-        background-color: #ffffff;
+
     }
 
     ul {
@@ -61,7 +62,7 @@ h1 {
     margin-bottom: 0.25rem;
 }
 
-@media (max-width: 782px) {
+@media (max-width: map_get($breakpoints,medium)) {
     
     #dr-main {
         --large-gap: 1rem;

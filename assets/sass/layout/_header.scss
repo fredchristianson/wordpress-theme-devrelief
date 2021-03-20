@@ -19,10 +19,12 @@ header.site-header {
 
     nav {
         grid-area: menu;
-        align-self: right;
+        align-self: left;
         background-color: var(--color-bg-menu);
         padding: var(--gap-small) var(--gap-medium) var(--gap-small) var(--gap-medium) ;
+        overflow: hidden;
         ul {
+            margin-left: 0;
             display: flex;
             li {
                 margin-left: 1rem;
@@ -49,8 +51,8 @@ header.site-header {
             }
 
             li:first-child { 
-                flex: 1;
-                text-align: right;
+                flex: 0;
+                text-align: left;
             }
         }
 

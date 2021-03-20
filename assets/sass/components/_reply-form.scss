@@ -1,0 +1,45 @@
+@use map;
+
+#respond {
+    background-color: var(--color-secondary-300);
+    padding: var(--gap-medium);
+
+    @include font-small;
+    #cancel-comment-reply-link {
+        display: block;
+    }
+    p {
+        position: relative;
+        
+        label {
+            vertical-align: top;
+            display: inline-block;
+            width: 10ch;
+            text-align: right;
+        }
+        textarea, input {
+            @include font-medium;
+            width: 75%;
+            max-width: 80ch;
+            font-weight: 400;
+        }
+    }
+
+    .comment-form-cookies-consent {
+        input, label {
+            text-align: left;
+            width: unset;
+        }
+    }
+
+    .submit {
+        width: auto !important;
+        padding: var(--gap-small);
+    }
+}
+
+@media (max-width: map_get($breakpoints,medium)) {
+    #respond {
+        margin: 0;
+    }
+} 

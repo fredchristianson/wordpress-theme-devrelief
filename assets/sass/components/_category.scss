@@ -1,0 +1,23 @@
+.categories .category {
+    border: 1px dotted var(--color-bg-cat) ;
+    background-color: var(--color-bg-cat);
+    color: var(--color-fg-cat);
+    
+    padding: 1px 2px 1px 2px;
+    border-radius: var(--border-radius-small);
+    margin-right: var(--gap-small);
+    white-space: nowrap;
+
+
+    &.category-development {
+        background-color: var(--color-cat-development);
+    }
+
+    &.category-wordpress {
+        background-color: var(--color-cat-wordpress);
+    }
+
+    &.category-smarthome {
+        background-color: var(--color-cat-smarthome);
+    }
+}  

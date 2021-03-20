@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC,SAAS,CAAC;EAClB,MAAM,EAAE,GAAG,CAAC,MAAM,CAAC,mBAAmB;EACtC,gBAAgB,EAAE,mBAAmB;EACrC,KAAK,EAAE,mBAAmB;EAE1B,OAAO,EAAE,eAAe;EACxB,aAAa,EAAE,0BAA0B;EACzC,YAAY,EAAE,gBAAgB;CAMjC;;AAbD,AAUI,WAVO,CAAC,SAAS,CAUjB,qBAAqB,CAAC;EAClB,gBAAgB,EAAE,4BAA4B;CACjD",
+    "sources": [
+        "sass/components/category.scss"
+    ],
+    "names": [],
+    "file": "category.css"
+}

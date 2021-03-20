@@ -1236,6 +1236,10 @@ ul ul {
   margin-bottom: var(--gap-small);
 }
 
+.post-comments li:last-child {
+  border-bottom: 0;
+}
+
 .post-comments ol.children {
   border-left: 1px solid var(--color-primary-500);
   margin-left: var(--gap-medium);

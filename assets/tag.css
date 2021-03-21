@@ -1,9 +1,0 @@
-.tags .tag {
-  border: 1px dotted var(--color-border-tag);
-  background-color: var(--color-bg-tag);
-  color: var(--color-fg-tag);
-  padding: 1px 2px 1px 2px;
-  border-radius: var(--border-radius-small);
-  margin-right: var(--gap-small);
-}
-/*# sourceMappingURL=tag.css.map */

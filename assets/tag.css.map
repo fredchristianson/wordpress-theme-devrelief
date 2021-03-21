@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,KAAK,CAAC,IAAI,CAAC;EACP,MAAM,EAAE,GAAG,CAAC,MAAM,CAAC,uBAAuB;EAC1C,gBAAgB,EAAE,mBAAmB;EACrC,KAAK,EAAE,mBAAmB;EAC1B,OAAO,EAAE,eAAe;EACxB,aAAa,EAAE,0BAA0B;EAEzC,YAAY,EAAE,gBAAgB;CACjC",
-    "sources": [
-        "sass/components/tag.scss"
-    ],
-    "names": [],
-    "file": "tag.css"
-}

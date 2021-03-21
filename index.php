@@ -6,7 +6,7 @@ get_header();
 <section id="dr-main"><?
 	if( is_front_page() ) {
 		get_template_part( 'loop', 'home' );
-	} else if ( is_single() ) {
+	} else if ( is_singular() ) {
 		get_template_part( 'loop', 'single' );
 	} else {
 		get_template_part( 'loop' );

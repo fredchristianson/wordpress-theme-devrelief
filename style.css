@@ -348,51 +348,6 @@ template {
 }
 
 html {
-  --color-neutral-100: #000000;
-  --color-neutral-200: #444444;
-  --color-neutral-300: #777777;
-  --color-neutral-400: #dddddd;
-  --color-neutral-500: #ffffff;
-  --color-primary-100: #0b1a33;
-  --color-primary-200: #193d77;
-  --color-primary-300: #2457AA;
-  --color-primary-400: #6689c4;
-  --color-primary-400-50: rgba(102,137,196,.5);
-  --color-primary-500: #d3ddee;
-  --color-secondary-100: #302b06;
-  --color-secondary-200: #a99716;
-  --color-secondary-300: #F2D81F;
-  --color-secondary-400: #f6e462;
-  --color-secondary-500: #fcf7d2;
-  --color-bg: var(--color-neutral-500);
-  --color-fg: var(--color-neutral-200);
-  --color-fg-bold: var(--color-neutral-100);
-  --color-fg-normal: var(--color-neutral-200);
-  --color-fg-light: var(--color-neutral-300);
-  --color-fg-faint: var(--color-neutral-400);
-  --color-hightlight-fg: var(--color-primary-200);
-  --color-brand-fg: var(--color-primary-200);
-  --color-link: var(--color-primary-200);
-  --color-faint: rgba(102, 137, 196, 0.7);
-  --color-bg-menu: var(--color-primary-400);
-  --color-fg-menu: var(--color-neutral-500);
-  --color-bg-primary-sidebar: #e4f7f6;
-  --color-fg-primary-sidebar: #444444;
-  --color-fg-highlight-primary-sidebar: #0ab3af;
-  --color-border-normal: #777777;
-  --color-border-focus: #77ff77;
-  --color-bg-secondary: #aaaaaa;
-  --color-fg-secondary: #004477;
-  --color-warning: #ff4444;
-  --color-bg-cat: var(--color-secondary-500);
-  --color-fg-cat: var(--color-neutral-200);
-  --color-border-cat: var(--color-neutral-400);
-  --color-bg-tag: var(--color-primary-500);
-  --color-fg-tag: var(--color-neutral-200);
-  --color-border-tag: var(--color-neutral-400);
-  --color-cat-development: #00ff00;
-  --color-cat-wordpress: #d1eef8;
-  --color-cat-smarthome: #fcdc00;
   --pad-normal: 0.25rem;
   --gap-small: 0.25rem;
   --gap-medium: 1rem;
@@ -400,14 +355,6 @@ html {
   --border-thin: 1px;
   --border-radius-small: 6px;
   --max-width: 1600px;
-}
-
-html .palette-1-off {
-  --color-bg-menu: var(--color-primary-400);
-  --color-fg-menu: var(--color-neutral-400);
-  --color-bg-primary-sidebar: rgba(38,205,222,.1);
-  --color-fg-primary-sidebar: #444444;
-  --color-fg-highlight-primary-sidebar: rgb(38, 205, 222);
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -642,6 +589,72 @@ h5, .text5 {
 strong {
   font-size: 1.5em;
   font-weight: 700;
+}
+
+html {
+  --color-neutral-100: #000000;
+  --color-neutral-200: #444444;
+  --color-neutral-300: #777777;
+  --color-neutral-400: #dddddd;
+  --color-neutral-500: #ffffff;
+  --color-primary-100: #0b1a33;
+  --color-primary-200: #193d77;
+  --color-primary-300: #2457AA;
+  --color-primary-400: #6689c4;
+  --color-primary-400-50: rgba(102,137,196,.5);
+  --color-primary-500: #d3ddee;
+  --color-secondary-100: #302b06;
+  --color-secondary-200: #a99716;
+  --color-secondary-300: #F2D81F;
+  --color-secondary-400: #f6e462;
+  --color-secondary-500: #fcf7d2;
+  --color-bg-100: var(--color-neutral-500);
+  --color-bg-200: var(--color-neutral-400);
+  --color-bg-300: var(--color-neutral-400);
+  --color-bg-400: var(--color-neutral-300);
+  --color-bg-500: var(--color-neutral-300);
+  --color-fg-100: var(--color-neutral-100);
+  --color-fg-200: var(--color-neutral-100);
+  --color-fg-300: var(--color-neutral-200);
+  --color-fg-400: var(--color-neutral-200);
+  --color-fg-500: var(--color-neutral-200);
+  --color-bg: var(--color-neutral-500);
+  --color-fg: var(--color-neutral-200);
+  --color-fg-bold: var(--color-neutral-100);
+  --color-fg-normal: var(--color-neutral-200);
+  --color-fg-light: var(--color-neutral-300);
+  --color-fg-faint: var(--color-neutral-400);
+  --color-hightlight-fg: var(--color-primary-200);
+  --color-brand-fg: var(--color-primary-200);
+  --color-link: var(--color-primary-200);
+  --color-faint: rgba(102, 137, 196, 0.7);
+  --color-bg-menu: var(--color-primary-400);
+  --color-fg-menu: var(--color-neutral-500);
+  --color-bg-primary-sidebar: #e4f7f6;
+  --color-fg-primary-sidebar: #444444;
+  --color-fg-highlight-primary-sidebar: #0ab3af;
+  --color-border-normal: #777777;
+  --color-border-focus: #77ff77;
+  --color-bg-secondary: #aaaaaa;
+  --color-fg-secondary: #004477;
+  --color-warning: #ff4444;
+  --color-bg-cat: var(--color-secondary-500);
+  --color-fg-cat: var(--color-neutral-200);
+  --color-border-cat: var(--color-neutral-400);
+  --color-bg-tag: var(--color-primary-500);
+  --color-fg-tag: var(--color-neutral-200);
+  --color-border-tag: var(--color-neutral-400);
+  --color-cat-development: #00ff00;
+  --color-cat-wordpress: #d1eef8;
+  --color-cat-smarthome: #fcdc00;
+}
+
+html .palette-1-off {
+  --color-bg-menu: var(--color-primary-400);
+  --color-fg-menu: var(--color-neutral-400);
+  --color-bg-primary-sidebar: rgba(38,205,222,.1);
+  --color-fg-primary-sidebar: #444444;
+  --color-fg-highlight-primary-sidebar: rgb(38, 205, 222);
 }
 
 @use map;
@@ -1357,11 +1370,11 @@ ul ul {
 .post-comments div.reply a, .post-comments div.reply a:hover {
   padding: var(--gap-small);
   padding: var(--gap-small);
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: var(--font-size-300);
+  font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
-  color: var(--color-fg-normal);
+  line-height: 1.5em;
+  color: var(--color-fg-300);
   font-weight: 400;
   line-height: 1.5em;
   text-decoration: none;
@@ -1454,8 +1467,122 @@ ul ul {
 }
 
 @use map;
+form, .coblocks-form form {
+  background-color: var(--color-secondary-500);
+  border-radius: var(--gap-small);
+  padding: var(--gap-medium);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10ch 1fr;
+      grid-template-columns: 10ch 1fr;
+}
+
+form label, form label.coblocks-label, .coblocks-form form label, .coblocks-form form label.coblocks-label {
+  width: 10ch;
+  text-align: right;
+  padding-right: var(--gap-small);
+}
+
+form textarea, form input, form textarea.coblocks-field, form input.coblocks-field, .coblocks-form form textarea, .coblocks-form form input, .coblocks-form form textarea.coblocks-field, .coblocks-form form input.coblocks-field {
+  font-size: var(--font-size-300);
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1.5em;
+  max-width: 80ch;
+  display: block;
+}
+
+form [type=submit], .coblocks-form form [type=submit] {
+  width: auto !important;
+  white-space: nowrap;
+  padding: var(--gap-small);
+  font-size: var(--font-size-300);
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1.5em;
+  color: var(--color-fg-300);
+  font-weight: 400;
+  line-height: 1.5em;
+  text-decoration: none;
+  background-color: var(--color-primary-300);
+  color: var(--color-neutral-500);
+  border-radius: var(--gap-small);
+  margin-bottom: var(--gap-small);
+  position: relative;
+  padding-right: 1.75em;
+  border: 0;
+  margin-left: 100%;
+  width: 80%;
+}
+
+form [type=submit]::after, .coblocks-form form [type=submit]::after {
+  content: '\f35a';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  line-height: 200%;
+  text-align: center;
+  right: .25em;
+  top: 0;
+}
+
+form.search-form {
+  display: block;
+  background-color: transparent;
+  padding: var(--gap-small);
+  line-height: 0;
+}
+
+form.search-form label {
+  width: 100%;
+  text-align: unset;
+}
+
+form.search-form label span {
+  display: none;
+}
+
+form.search-form label input {
+  width: 100%;
+  font-size: var(--font-size-200);
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2em;
+  color: var(--color-fg-200);
+  line-height: 1.5em;
+  margin-bottom: var(--gap-small);
+}
+
+form.search-form [type=submit] {
+  padding: var(--gap-small);
+  font-size: var(--font-size-200);
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1.2em;
+  color: var(--color-fg-200);
+  line-height: 1.5em;
+  text-decoration: none;
+  background-color: var(--color-primary-400);
+  color: var(--color-neutral-400);
+  border-radius: var(--gap-small);
+  margin-bottom: var(--gap-small);
+  text-align: unset;
+  margin-left: unset;
+}
+
+form.search-form.search-form:focus-within [type=submit], form.search-form [type=submit]:hover {
+  color: var(--color-neutral-500);
+}
+
+@media (max-width: 768px) {
+  #respond {
+    margin: 0;
+  }
+}
+
+@use map;
 #respond {
-  background-color: var(--color-secondary-400);
+  background-color: var(--color-secondary-500);
   border-radius: var(--gap-small);
   padding: var(--gap-medium);
   font-size: var(--font-size-200);
@@ -1496,11 +1623,11 @@ ul ul {
 
 #respond .form-submit {
   padding: var(--gap-small);
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: var(--font-size-300);
+  font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
-  color: var(--color-fg-normal);
+  line-height: 1.5em;
+  color: var(--color-fg-300);
   font-weight: 400;
   line-height: 1.5em;
   text-decoration: none;

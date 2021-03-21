@@ -1,0 +1,68 @@
+@use map;
+
+form, .coblocks-form form {
+    background-color: var(--color-secondary-500);
+    border-radius: var(--gap-small);
+    padding: var(--gap-medium);
+    display: grid;
+    grid-template-columns: 10ch 1fr;
+    
+    label, label.coblocks-label {
+        width: 10ch;
+        text-align: right;
+        padding-right: var(--gap-small);
+    }
+    textarea, input,textarea.coblocks-field, input.coblocks-field {
+        @include font-300;
+        max-width: 80ch;
+        display: block;
+        
+    }
+
+    [type=submit] {
+        width: auto !important;
+        white-space: nowrap;
+        @include button-300;
+        @include icon-submit-right;
+        border: 0;
+        margin-left: 100%;
+        width: 80%;
+    }
+}
+
+form.search-form {
+    display: block;
+    background-color: transparent;;
+    padding: var(--gap-small);
+    line-height: 0;
+    label {
+        width: 100%;
+        text-align: unset;
+        span {
+            display:none;
+        }
+
+        input {
+            width: 100%;
+            @include text-400;
+            margin-bottom: var(--gap-small);
+        }
+
+        
+    }
+    [type=submit]{
+        @include button-400;
+        text-align: unset;
+        margin-left: unset;
+    }
+
+    &.search-form:focus-within [type=submit], [type=submit]:hover{
+        color: var(--color-neutral-500);
+    }
+}
+
+@media (max-width: map_get($breakpoints,medium)) {
+    #respond {
+        margin: 0;
+    }
+} 

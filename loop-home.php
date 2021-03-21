@@ -1,4 +1,9 @@
 <?
+
+$logger = new DRLog\DRLogger("loop-home");
+$logger->debug("home loop running");
+?>
+<?
 if ( have_posts() ) :
     while (have_posts() ) : the_post(); 
         ?><section class='posts content home single'><?

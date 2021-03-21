@@ -9,6 +9,17 @@ button, input[type='submit'] {
     outline: 0;
 }
 
+@mixin button-200 {
+    padding: var(--gap-small);
+    @include text-200;
+    text-decoration: none;
+
+    background-color: var(--color-primary-200);
+    color: var(--color-neutral-500);
+    border-radius: var(--gap-small);
+    margin-bottom: var(--gap-small);
+}
+
 @mixin button-300 {
     padding: var(--gap-small);
     @include text-300;
@@ -16,6 +27,17 @@ button, input[type='submit'] {
 
     background-color: var(--color-primary-300);
     color: var(--color-neutral-500);
+    border-radius: var(--gap-small);
+    margin-bottom: var(--gap-small);
+}
+
+@mixin button-400 {
+    padding: var(--gap-small);
+    @include text-400;
+    text-decoration: none;
+
+    background-color: var(--color-primary-400);
+    color: var(--color-neutral-400);
     border-radius: var(--gap-small);
     margin-bottom: var(--gap-small);
 }

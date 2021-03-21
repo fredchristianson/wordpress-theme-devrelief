@@ -22,6 +22,43 @@ html {
     font-family: 'Source Code Pro',monospace;
 }
 
+@mixin font-500 {
+    font-size: var(--font-size-100);
+    font-weight: 400;
+    font-family: Roboto, sans-serif;
+    line-height: 1.1em;
+}
+
+@mixin font-400 {
+    font-size: var(--font-size-200);
+    font-weight: 400;
+    font-family: Roboto, sans-serif;
+    line-height: 1.2em;
+}
+
+@mixin font-300 {
+    font-size: var(--font-size-300);
+    font-weight: 400;
+    font-family: Roboto, sans-serif;
+    line-height: 1.5em;
+}
+
+
+@mixin font-200 {
+    font-size: var(--font-size-400);
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+    line-height: 1.5em;
+}
+
+@mixin font-100 {
+    font-size: var(--font-size-500);
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+    line-height: 1.75em;
+}
+
+
 @mixin font-small {
     font-size: var(--font-size-200);
     font-weight: 400;

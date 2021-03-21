@@ -55,35 +55,34 @@ article {
   line-height: 1.2em;
 }
 
-@mixin text-100 {
-  @include font-large;
-  color: var(--color-fg-bold);
-  line-height: 2em;
+@mixin text-500 {
+  @include font-500;
+  color: var(--color-fg-100);
 }
 
-@mixin text-200 {
-  @include font-medium;
-  color: var(--color-fg-bold);
+@mixin text-400 {
+  @include font-400;
+  color: var(--color-fg-200);
   line-height: 1.5em;
 }
 
 @mixin text-300 {
-  @include font-medium;
-  color: var(--color-fg-normal);
+  @include font-300;
+  color: var(--color-fg-300);
   font-weight: 400;
   line-height: 1.5em;
 } 
 
-@mixin text-400 {
-  @include font-normal;
-  color: var(--color-fg-normal);
+@mixin text-200 {
+  @include font-200;
+  color: var(--color-fg-400);
   line-height: 1.5em;
 }
 
-@mixin text-500 {
-  @include font-normal;
+@mixin text-100 {
+  @include font-100;
   font-size: 0.75rem;
-  color: var(--color-neutral-300);
+  color: var(--color-fg-400);
   line-height: 1.2em;
 }
 

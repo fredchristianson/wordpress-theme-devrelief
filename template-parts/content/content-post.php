@@ -1,3 +1,6 @@
+<?$logger = new DRLog\DRLogger("loop");
+?>
+
 <article class="post"><?
     ?><header><?
     if (!is_front_page()) {
@@ -51,9 +54,12 @@
     ?></span><?
     ?></header><?
     ?><section class='content'><?
-        if (is_single()) {
+        if (is_singular()) {
+            $logger->debug("show the_content");
+
             the_content();
         } else {
+            $logger->debug("show the_excerpt");
             the_excerpt();
             ?><a href='<?the_permalink()?>'>read more</a><?
         }

@@ -963,6 +963,40 @@ footer h1 {
   font-size: 4vw;
 }
 
+#login h1 {
+  position: relative;
+}
+
+#login h1 a {
+  position: absolute;
+  left: 0;
+  margin: 0;
+}
+
+#login h1:before {
+  content: 'Developer';
+  color: var(--color-brand-fg);
+  position: absolute;
+  left: 100px;
+  top: 0;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2.0rem;
+  line-height: 2.1rem;
+  font-weight: 700;
+}
+
+#login h1:after {
+  content: 'Relief';
+  color: var(--color-brand-fg);
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2.0rem;
+  line-height: 2.1rem;
+  font-weight: 700;
+}
+
 .gview.pdf {
   width: 100%;
   min-height: 100vh;
@@ -1574,10 +1608,13 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   color: var(--color-neutral-500);
 }
 
-@media (max-width: 768px) {
-  #respond {
-    margin: 0;
-  }
+#login form {
+  display: block;
+}
+
+#login form label {
+  display: block;
+  text-align: left;
 }
 
 @use map;

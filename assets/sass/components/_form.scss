@@ -61,8 +61,10 @@ form.search-form {
     }
 }
 
-@media (max-width: map_get($breakpoints,medium)) {
-    #respond {
-        margin: 0;
+#login form {
+    display: block;
+    label {
+        display: block;
+        text-align: left;
     }
-} 
+}

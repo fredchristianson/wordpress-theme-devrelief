@@ -17,10 +17,8 @@ Version: 1.0
 @import 'base/__base-dir';
 
 // 4. Layout-related sections
-@import
-'layout/page',
-'layout/header',
-'layout/footer';
+@import 'layout/__layout-dir';
+
 
 // 5. Components
 @import 'components/__components-dir';

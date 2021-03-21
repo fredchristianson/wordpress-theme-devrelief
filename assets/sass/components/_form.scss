@@ -68,4 +68,8 @@ form.search-form {
         text-align: left;
         width: auto;
     }
+
+    input[type=checkbox] ~ label {
+        display: inline-block;
+    }
 }

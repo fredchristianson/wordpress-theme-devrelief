@@ -1618,6 +1618,10 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   width: auto;
 }
 
+#login form input[type=checkbox] ~ label {
+  display: inline-block;
+}
+
 @use map;
 #respond {
   background-color: var(--color-secondary-500);

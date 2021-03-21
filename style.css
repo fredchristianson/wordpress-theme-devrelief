@@ -1615,6 +1615,7 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
 #login form label {
   display: block;
   text-align: left;
+  width: auto;
 }
 
 @use map;

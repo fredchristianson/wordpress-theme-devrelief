@@ -534,6 +534,10 @@ article {
   margin-bottom: 2rem;
 }
 
+em {
+  font-style: italic;
+}
+
 /*
 * create a hierarchy of text styles (like h1/h2/h3/... )
 * text1 is "most significant" to text6 least.

@@ -7,7 +7,7 @@
         ?>
         <span class='username'>
             <a class='edit-profile' href='<?echo get_edit_profile_url()?>'><?echo $current_user->user_firstname ?: $user_identity?></a>
-            <a class='logout' href='<?wp_logout_url()?>'>Logout</a>
+            <a class='logout' href='<?echo wp_logout_url()?>'>Logout</a>
             
         </span><?
     else:

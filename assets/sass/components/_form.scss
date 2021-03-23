@@ -13,7 +13,7 @@
         padding-right: var(--gap-small);
     }
     textarea, input,textarea.coblocks-field, input.coblocks-field {
-        @include font-300;
+        @include text3;
         max-width: 80ch;
         display: block;
         
@@ -22,7 +22,7 @@
     [type=submit] {
         width: auto !important;
         white-space: nowrap;
-        @include button-300;
+        @include button3;
         @include icon-submit-right;
         border: 0;
         margin-left: 100%;
@@ -44,20 +44,20 @@ form.search-form {
 
         input {
             width: 100%;
-            @include text-400;
+            @include text4;
             margin-bottom: var(--gap-small);
         }
 
         
     }
     [type=submit]{
-        @include button-400;
+        @include button4;
         text-align: unset;
         margin-left: unset;
     }
 
     &.search-form:focus-within [type=submit], [type=submit]:hover{
-        color: var(--color-neutral-500);
+        @include button1;
     }
 }
 

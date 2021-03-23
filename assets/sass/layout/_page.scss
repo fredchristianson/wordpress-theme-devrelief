@@ -32,7 +32,7 @@
     }
 
     .sidebar {
-        @include font-small;
+        @include fs4;
         padding: 0.25rem;
         overflow: hidden;
     }

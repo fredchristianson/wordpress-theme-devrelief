@@ -1,0 +1,15 @@
+.user-profile {
+  color: green;
+}
+
+.user-profile .login {
+  color: red;
+}
+
+.user-profile .login::after {
+  content: '|';
+  display: inline-block;
+  margin-left: var(--gap-small);
+  margin-right: var(--gap-small);
+}
+/*# sourceMappingURL=user.css.map */

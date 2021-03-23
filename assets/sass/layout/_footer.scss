@@ -20,7 +20,7 @@ footer {
         gap: 4rem;
     }
     nav {
-        @include font-small;
+        @include fs3;
         grid-area: navigation;
 
         ul {

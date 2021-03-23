@@ -1,0 +1,35 @@
+:root {
+    --logo-height: 96px; 
+}
+
+.logo {
+    --lheight: var(--logo-height,4em);
+    --lwidth: var(--logo-width, calc(var(--lheight) * 0.8));
+    width: var(--lwidth) !important;
+    height: var(--lheight) !important;
+    --r-width: var(--letter-width, var(--lwidth));
+    --r-height: var(--letter-height, var(--lheight));
+    font-family: sans-serif;
+    background-color: var(--color-bg-logo);
+    color: var(--color-fg-logo);
+    font-size: 0.1;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    position:relative;
+    display: flex;
+    
+  }
+  
+  .logo span {
+    display: none;
+  }
+
+  .logo::after {
+    content: 'R';
+    align-self: center;
+    z-index: 2;
+    font-size: calc(var(--r-width) * 1);
+    font-weight: 700;
+    display: block;
+    padding-left: 7%;
+  }

@@ -3,8 +3,9 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     position: absolute;
-    line-height: 200%;
-    text-align: center;
+    line-height: 2em;
+    top: 50%;
+    transform: translate(0,-50%);
 }
 
 @mixin icon-reply-right {
@@ -15,7 +16,6 @@
         content: '\f3e5';
         @include font-awesome;
         right: .25em;
-        top: 0;
     }
 }
 
@@ -30,7 +30,6 @@
         @include font-awesome;
         
         left: .25em;
-        top: 0;
     }
 }
 
@@ -43,7 +42,6 @@
         content: '\f044';
         @include font-awesome;
         right: .25em;
-        top: 0;
     }
 }
 
@@ -55,6 +53,16 @@
         content: '\f35a';
         @include font-awesome;
         right: .25em;
-        top: 0;
+    }
+}
+
+@mixin icon-edit-profile-right {
+    position: relative;
+    padding-right: 1.75em;
+
+    &::after {
+        content: '\f4ff';
+        @include font-awesome;
+        right: .25em;
     }
 }

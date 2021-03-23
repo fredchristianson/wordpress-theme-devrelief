@@ -1,0 +1,33 @@
+header.site-header .user {
+    margin-top: var(--gap-medium);
+
+}
+
+.user-profile {
+   
+    .edit-profile {
+        line-height: 1.5em;
+        @include font-bold;
+        @include icon-edit-profile-right;
+    }
+    
+    .logout {
+        &::before {
+            content: '|';
+            display: inline-block;
+            margin-left: var(--gap-small);
+            margin-right: var(--gap-small);
+        }
+    }
+
+    .login {
+      
+        &::after { 
+            content: '|';
+            display: inline-block;
+            margin-left: var(--gap-small);
+            margin-right: var(--gap-small);
+            @include font-bold;
+        }
+    }
+} 

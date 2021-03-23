@@ -1,6 +1,6 @@
 p.link {
     &.small {
-        @include font-small;
+        @include fs4;
     }
 
     &.icon a {
@@ -22,4 +22,8 @@ p.link {
         }
         
     }
+}
+
+.site-title a {
+    color: var(--color-fg-brand);
 }

@@ -1,23 +1,22 @@
 
 html {
-    --color-neutral-100: #000000;
-    --color-neutral-200: #444444;
-    --color-neutral-300: #777777;
-    --color-neutral-400: #dddddd; // rgba(170,170,170,1);
-    --color-neutral-500: #ffffff;
+    --color-neutral-100: hsl(0,100%,100%);
+    --color-neutral-200: hsl(0, 0%,80%);
+    --color-neutral-300: hsl(0,0%,50);
+    --color-neutral-400: hsl(0,0%,20%); 
+    --color-neutral-500: hsl(0,0%,0%);
   
-    --color-primary-100: #0b1a33;
-    --color-primary-200: #193d77;
-    --color-primary-300: #2457AA;
-    --color-primary-400: #6689c4; //rgba(102, 137, 196, 1)
-    --color-primary-400-50: rgba(102,137,196,.5);
-    --color-primary-500: #d3ddee;
+    --color-primary-100: hsl(218, 60%, 80%);
+    --color-primary-200: hsl(218, 60%, 70%);
+    --color-primary-300: hsl(218, 60%, 60%);
+    --color-primary-400: hsl(218, 60%, 40%);
+    --color-primary-500: hsl(218, 60%, 20%);;
   
-    --color-secondary-100: #302b06;
-    --color-secondary-200: #a99716;
-    --color-secondary-300: #F2D81F;
-    --color-secondary-400: #f6e462; //rgba(102, 137, 196, 1)
-    --color-secondary-500: #fcf7d2;
+    --color-secondary-100: hsl(53, 89%, 80%);
+    --color-secondary-200: hsl(53, 89%, 70%);
+    --color-secondary-300: hsl(53, 89%, 60%);
+    --color-secondary-400: hsl(53, 89%, 40%);
+    --color-secondary-500: hsl(53, 89%, 20%);
 
     --color-bg-100: var(--color-neutral-500);
     --color-bg-200: var(--color-neutral-400);
@@ -31,42 +30,33 @@ html {
     --color-fg-400: var(--color-neutral-200);
     --color-fg-500: var(--color-neutral-200);
   
+    --color-bg-menu: var(--color-primary-200);
+    --color-fg-menu: var(--color-neutral-100);
   
-    --color-bg: var(--color-neutral-500);
-    --color-fg: var(--color-neutral-200);
-    --color-fg-bold: var(--color-neutral-100);
-    --color-fg-normal: var(--color-neutral-200);
-    --color-fg-light: var(--color-neutral-300);
-    --color-fg-faint: var(--color-neutral-400);
-    --color-hightlight-fg: var(--color-primary-200);
-    --color-brand-fg: var(--color-primary-200);
-    --color-link: var(--color-primary-200);
-    --color-faint: rgba(102, 137, 196, 0.7);
-    --color-bg-menu: var(--color-primary-400);
-    --color-fg-menu: var(--color-neutral-500);
+    --color-bg-primary-sidebar: var(--color-secondary-100);
+    --color-fg-primary-sidebar: var(--color-neutral-500);
+    --color-fg-highlight-primary-sidebar: var(--color-primary-200);
   
-    --color-bg-primary-sidebar: #e4f7f6;
-    --color-fg-primary-sidebar: #444444;
-    --color-fg-highlight-primary-sidebar: #0ab3af;
-  
-    --color-border-normal: #777777;
-    --color-border-focus: #77ff77;
-    --color-bg-secondary: #aaaaaa;
-    --color-fg-secondary: #004477;
+    --color-border-normal: #var(var(--color-neutral-300));
+    --color-border-focus: var(--color-neutral-200);
   
     --color-warning: #ff4444;
   
-    --color-bg-cat: var(--color-secondary-500);
-    --color-fg-cat: var(--color-neutral-200);
-    --color-border-cat: var(--color-neutral-400);
-    
-    --color-bg-tag: var(--color-primary-500);
-    --color-fg-tag: var(--color-neutral-200);
+
+    --color-bg-tag: var(--color-primary-200);
+    --color-fg-tag: var(--color-neutral-500);
     --color-border-tag: var(--color-neutral-400);
   
+    --color-bg-cat: var(--color-neutral-200);
+    --color-fg-cat: var(--color-primary-500);
+    --color-border-cat: var(--color-neutral-400);
     --color-cat-development: #00ff00;
     --color-cat-wordpress: #d1eef8;
     --color-cat-smarthome: #fcdc00;
+
+    --color-fg-brand: var(--color-primary-400);
+    --color-fg-logo: var(--color-fg-brand);
+    --color-bg-logo: var(--color-bg-menu);
 
     .palette-1-off {
         --color-bg-menu: var(--color-primary-400);

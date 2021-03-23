@@ -534,60 +534,56 @@ article {
   margin-bottom: 2rem;
 }
 
-em {
-  font-style: italic;
-}
-
 /*
 * create a hierarchy of text styles (like h1/h2/h3/... )
 * text1 is "most significant" to text6 least.
 * These can be used as either a mixin or style
 */
 h1, .text1 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-500);
   font-weight: 700;
   font-family: Roboto, sans-serif;
-  line-height: 1.7rem;
-  color: var(--color-fg-bold);
+  line-height: 1.75em;
+  color: var(--color-primary-100);
   line-height: 2em;
 }
 
 h2, .text2 {
-  font-size: 1.25rem;
+  font-size: var(--font-size-400);
   font-weight: 700;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
-  color: var(--color-fg-bold);
   line-height: 1.5em;
+  color: var(--color-primary-200);
+  line-height: 1.75em;
 }
 
 h3, .text3 {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: var(--font-size-300);
+  font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
-  color: var(--color-fg-normal);
+  line-height: 1.25em;
+  color: var(--color-primary-300);
   font-weight: 400;
   line-height: 1.5em;
 }
 
 h4, .text4 {
-  font-size: var(--font-size-300);
+  font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
-  color: var(--color-fg-normal);
-  line-height: 1.5em;
+  line-height: 1.1em;
+  color: var(--color-primary-400);
+  line-height: 1.25em;
 }
 
 h5, .text5 {
-  font-size: var(--font-size-300);
+  font-size: var(--font-size-100);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
+  line-height: 1.0em;
   font-size: 0.75rem;
-  color: var(--color-neutral-300);
-  line-height: 1.2em;
+  color: var(--color-primary-400);
+  line-height: 1.0em;
 }
 
 strong {
@@ -595,23 +591,26 @@ strong {
   font-weight: 700;
 }
 
+em {
+  font-style: italic;
+}
+
 html {
-  --color-neutral-100: #000000;
-  --color-neutral-200: #444444;
-  --color-neutral-300: #777777;
-  --color-neutral-400: #dddddd;
-  --color-neutral-500: #ffffff;
-  --color-primary-100: #0b1a33;
-  --color-primary-200: #193d77;
-  --color-primary-300: #2457AA;
-  --color-primary-400: #6689c4;
-  --color-primary-400-50: rgba(102,137,196,.5);
-  --color-primary-500: #d3ddee;
-  --color-secondary-100: #302b06;
-  --color-secondary-200: #a99716;
-  --color-secondary-300: #F2D81F;
-  --color-secondary-400: #f6e462;
-  --color-secondary-500: #fcf7d2;
+  --color-neutral-100: hsl(0,100%,100%);
+  --color-neutral-200: hsl(0, 0%,80%);
+  --color-neutral-300: hsl(0,0%,50);
+  --color-neutral-400: hsl(0,0%,20%);
+  --color-neutral-500: hsl(0,0%,0%);
+  --color-primary-100: hsl(218, 60%, 80%);
+  --color-primary-200: hsl(218, 60%, 70%);
+  --color-primary-300: hsl(218, 60%, 60%);
+  --color-primary-400: hsl(218, 60%, 40%);
+  --color-primary-500: hsl(218, 60%, 20%);
+  --color-secondary-100: hsl(53, 89%, 80%);
+  --color-secondary-200: hsl(53, 89%, 70%);
+  --color-secondary-300: hsl(53, 89%, 60%);
+  --color-secondary-400: hsl(53, 89%, 40%);
+  --color-secondary-500: hsl(53, 89%, 20%);
   --color-bg-100: var(--color-neutral-500);
   --color-bg-200: var(--color-neutral-400);
   --color-bg-300: var(--color-neutral-400);
@@ -622,35 +621,26 @@ html {
   --color-fg-300: var(--color-neutral-200);
   --color-fg-400: var(--color-neutral-200);
   --color-fg-500: var(--color-neutral-200);
-  --color-bg: var(--color-neutral-500);
-  --color-fg: var(--color-neutral-200);
-  --color-fg-bold: var(--color-neutral-100);
-  --color-fg-normal: var(--color-neutral-200);
-  --color-fg-light: var(--color-neutral-300);
-  --color-fg-faint: var(--color-neutral-400);
-  --color-hightlight-fg: var(--color-primary-200);
-  --color-brand-fg: var(--color-primary-200);
-  --color-link: var(--color-primary-200);
-  --color-faint: rgba(102, 137, 196, 0.7);
-  --color-bg-menu: var(--color-primary-400);
-  --color-fg-menu: var(--color-neutral-500);
-  --color-bg-primary-sidebar: #e4f7f6;
-  --color-fg-primary-sidebar: #444444;
-  --color-fg-highlight-primary-sidebar: #0ab3af;
-  --color-border-normal: #777777;
-  --color-border-focus: #77ff77;
-  --color-bg-secondary: #aaaaaa;
-  --color-fg-secondary: #004477;
+  --color-bg-menu: var(--color-primary-200);
+  --color-fg-menu: var(--color-neutral-100);
+  --color-bg-primary-sidebar: var(--color-secondary-100);
+  --color-fg-primary-sidebar: var(--color-neutral-500);
+  --color-fg-highlight-primary-sidebar: var(--color-primary-200);
+  --color-border-normal: #var(var(--color-neutral-300));
+  --color-border-focus: var(--color-neutral-200);
   --color-warning: #ff4444;
-  --color-bg-cat: var(--color-secondary-500);
-  --color-fg-cat: var(--color-neutral-200);
-  --color-border-cat: var(--color-neutral-400);
-  --color-bg-tag: var(--color-primary-500);
-  --color-fg-tag: var(--color-neutral-200);
+  --color-bg-tag: var(--color-primary-200);
+  --color-fg-tag: var(--color-neutral-500);
   --color-border-tag: var(--color-neutral-400);
+  --color-bg-cat: var(--color-neutral-200);
+  --color-fg-cat: var(--color-primary-500);
+  --color-border-cat: var(--color-neutral-400);
   --color-cat-development: #00ff00;
   --color-cat-wordpress: #d1eef8;
   --color-cat-smarthome: #fcdc00;
+  --color-fg-brand: var(--color-primary-400);
+  --color-fg-logo: var(--color-fg-brand);
+  --color-bg-logo: var(--color-bg-menu);
 }
 
 html .palette-1-off {
@@ -671,11 +661,11 @@ html .palette-1-off {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100vh;
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: var(--font-size-300);
+  font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
-  color: var(--color-fg-normal);
+  line-height: 1.25em;
+  color: var(--color-primary-300);
   font-weight: 400;
   line-height: 1.5em;
 }
@@ -701,11 +691,11 @@ html .palette-1-off {
   grid-area: posts;
   border-right: 1px solid var(--color-faint);
   padding: var(--gap-large);
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: var(--font-size-300);
+  font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
-  color: var(--color-fg-normal);
+  line-height: 1.25em;
+  color: var(--color-primary-300);
   font-weight: 400;
   line-height: 1.5em;
 }
@@ -714,7 +704,7 @@ html .palette-1-off {
   font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1rem;
+  line-height: 1.1em;
   padding: 0.25rem;
   overflow: hidden;
 }
@@ -758,6 +748,7 @@ h1 {
 }
 
 header.site-header {
+  --logo-height: 6rem;
   background-color: #ffffff;
   border-bottom: 1px solid var(--color-faint);
   padding: 0;
@@ -780,66 +771,6 @@ header.site-header nav {
   -ms-flex-item-align: left;
       -ms-grid-row-align: left;
       align-self: left;
-  background-color: var(--color-bg-menu);
-  padding: var(--gap-small) var(--gap-medium) var(--gap-small) var(--gap-medium);
-  overflow: hidden;
-}
-
-header.site-header nav ul {
-  margin-left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-header.site-header nav ul li {
-  margin-left: 1rem;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 max-content;
-          flex: 0 0 max-content;
-  -ms-flex-item-align: right;
-      -ms-grid-row-align: right;
-      align-self: right;
-  list-style-type: none;
-}
-
-header.site-header nav ul li a, header.site-header nav ul li a:hover, header.site-header nav ul li a:visited {
-  font-size: var(--font-size-300);
-  font-weight: 400;
-  font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
-  background-color: transparent;
-  color: var(--color-fg-menu);
-  text-decoration: none;
-  -webkit-transition: 100ms;
-  transition: 100ms;
-}
-
-header.site-header nav ul li a:hover {
-  text-shadow: 0 0 20px var(--color-fg-menu);
-  font-size: 1.25rem;
-  font-weight: 700;
-  font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
-}
-
-header.site-header nav ul li.current-menu-item a {
-  font-size: 1.25rem;
-  font-weight: 700;
-  font-family: Roboto, sans-serif;
-  line-height: 1.5rem;
-}
-
-header.site-header nav ul li:first-child {
-  -webkit-box-flex: 0;
-      -ms-flex: 0;
-          flex: 0;
-  text-align: left;
-}
-
-header.site-header nav ul:hover a {
-  text-shadow: 0 0 4px var(--color-fg);
-  color: transparent;
 }
 
 header.site-header .site-logo {
@@ -898,8 +829,6 @@ header.site-header .user {
   -ms-grid-row: 2;
   -ms-grid-column: 5;
   grid-area: user;
-  position: absolute;
-  right: 0;
   padding-right: var(--gap-medium);
   white-space: nowrap;
 }
@@ -926,10 +855,10 @@ footer .sidebar.footer {
 }
 
 footer nav {
-  font-size: var(--font-size-200);
+  font-size: var(--font-size-300);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1rem;
+  line-height: 1.25em;
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: navigation;
@@ -1014,7 +943,7 @@ p.link.small {
   font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1rem;
+  line-height: 1.1em;
 }
 
 p.link.icon a {
@@ -1037,10 +966,13 @@ p.link.download a::after {
   right: 0px;
 }
 
+.site-title a {
+  color: var(--color-fg-brand);
+}
+
 button, input[type='submit'] {
   border: 1px solid var(--color-border-normal);
   border-radius: var(--border-radius-small);
-  outline: 0;
 }
 
 input {
@@ -1074,10 +1006,12 @@ input:focus {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 300px;
-          flex: 1 1 300px;
-  background-color: var(--color-primary-500);
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 300px;
+          flex: 0 0 300px;
+  background-color: var(--color-primary-100);
+  color: var(--color-neutral-500);
+  border-radius: var(--gap-medium);
 }
 
 .content.multiple article.post header {
@@ -1134,11 +1068,11 @@ article.post header h2.title {
 }
 
 article.post header h2.title a, article.post header h2.title a:hover {
-  font-size: 1.5rem;
+  font-size: var(--font-size-400);
   font-weight: 700;
   font-family: Roboto, sans-serif;
-  line-height: 1.7rem;
-  color: var(--color-link);
+  line-height: 1.5em;
+  color: var(--color-primary-500);
   text-decoration: none;
 }
 
@@ -1179,38 +1113,44 @@ article.post header .tags {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: tags;
-  font-size: var(--font-size-300);
+  font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
-  color: var(--color-fg-normal);
-  line-height: 1.5em;
+  line-height: 1.1em;
+  color: var(--color-primary-400);
+  line-height: 1.25em;
   font-style: italic;
+  line-height: unset;
+  height: auto;
+  margin-bottom: var(--gap-small);
 }
 
 article.post header .categories {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: categories;
-  font-size: var(--font-size-300);
+  font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
-  color: var(--color-fg-normal);
-  line-height: 1.5em;
+  line-height: 1.1em;
+  color: var(--color-primary-400);
+  line-height: 1.25em;
+  line-height: unset;
+  height: auto;
+  margin-bottom: var(--gap-small);
 }
 
 article.post header .posted_at {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: posted_at;
-  font-size: var(--font-size-300);
+  font-size: var(--font-size-100);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
+  line-height: 1.0em;
   font-size: 0.75rem;
-  color: var(--color-neutral-300);
-  line-height: 1.2em;
+  color: var(--color-primary-400);
+  line-height: 1.0em;
 }
 
 article.post header .posted_at .date {
@@ -1226,15 +1166,16 @@ article.post header .content {
 .three-column .wp-block-column {
   width: 100%;
   border-right: 1px solid var(--color-faint);
-  padding-right: var(--medium-gap);
+  padding-right: var(--gap-medium);
   padding-left: 0;
   margin-right: 0;
-  margin-left: var(--medium-gap);
+  margin-left: var(--gap-medium);
   font-size: var(--font-size-300);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
-  color: var(--color-fg-normal);
+  line-height: 1.25em;
+  color: var(--color-primary-300);
+  font-weight: 400;
   line-height: 1.5em;
 }
 
@@ -1272,7 +1213,7 @@ ul ul {
   font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1rem;
+  line-height: 1.1em;
   padding: var(--gap-small);
   overflow: hidden;
 }
@@ -1286,10 +1227,10 @@ ul ul {
 }
 
 .sidebar.primary h1, .sidebar.primary h2 {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: var(--font-size-300);
+  font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
+  line-height: 1.25em;
   color: var(--color-fg-highlight-primary-sidebar);
 }
 
@@ -1353,6 +1294,9 @@ ul ul {
   font-size: var(--font-size-300);
   font-weight: 400;
   font-family: Roboto, sans-serif;
+  line-height: 1.25em;
+  color: var(--color-primary-300);
+  font-weight: 400;
   line-height: 1.5em;
   max-width: 80ch;
   display: block;
@@ -1365,8 +1309,8 @@ ul ul {
   font-size: var(--font-size-300);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.5em;
-  color: var(--color-fg-300);
+  line-height: 1.25em;
+  color: var(--color-primary-300);
   font-weight: 400;
   line-height: 1.5em;
   text-decoration: none;
@@ -1386,10 +1330,11 @@ ul ul {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   position: absolute;
-  line-height: 200%;
-  text-align: center;
+  line-height: 2em;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   right: .25em;
-  top: 0;
 }
 
 form.search-form {
@@ -1413,9 +1358,9 @@ form.search-form label input {
   font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2em;
-  color: var(--color-fg-200);
-  line-height: 1.5em;
+  line-height: 1.1em;
+  color: var(--color-primary-400);
+  line-height: 1.25em;
   margin-bottom: var(--gap-small);
 }
 
@@ -1424,12 +1369,12 @@ form.search-form [type=submit] {
   font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2em;
-  color: var(--color-fg-200);
-  line-height: 1.5em;
+  line-height: 1.1em;
+  color: var(--color-primary-400);
+  line-height: 1.25em;
   text-decoration: none;
-  background-color: var(--color-primary-400);
-  color: var(--color-neutral-400);
+  background-color: var(--color-primary-200);
+  color: var(--color-neutral-100);
   border-radius: var(--gap-small);
   margin-bottom: var(--gap-small);
   text-align: unset;
@@ -1437,7 +1382,18 @@ form.search-form [type=submit] {
 }
 
 form.search-form.search-form:focus-within [type=submit], form.search-form [type=submit]:hover {
+  padding: var(--gap-medium);
+  font-size: var(--font-size-500);
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.75em;
+  color: var(--color-primary-100);
+  line-height: 2em;
+  text-decoration: none;
+  background-color: var(--color-primary-200);
   color: var(--color-neutral-500);
+  border-radius: var(--gap-medium);
+  margin-bottom: var(--gap-medium);
 }
 
 #login form {
@@ -1456,7 +1412,7 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
 
 @use map;
 #respond {
-  background-color: var(--color-secondary-500);
+  background-color: var(--color-secondary-100);
   border-radius: var(--gap-small);
   padding: var(--gap-medium);
 }
@@ -1465,7 +1421,7 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1rem;
+  line-height: 1.1em;
 }
 
 #respond #commentform .comment-notes {
@@ -1488,10 +1444,10 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
 }
 
 #respond #commentform p textarea, #respond #commentform p input {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: var(--font-size-300);
+  font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.2rem;
+  line-height: 1.25em;
   width: 75%;
   max-width: 80ch;
   font-weight: 400;
@@ -1507,8 +1463,8 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   font-size: var(--font-size-300);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.5em;
-  color: var(--color-fg-300);
+  line-height: 1.25em;
+  color: var(--color-primary-300);
   font-weight: 400;
   line-height: 1.5em;
   text-decoration: none;
@@ -1527,10 +1483,11 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   position: absolute;
-  line-height: 200%;
-  text-align: center;
+  line-height: 2em;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   right: .25em;
-  top: 0;
 }
 
 #respond #commentform .form-submit .submit {
@@ -1547,7 +1504,7 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
 }
 
 .post-comments {
-  background-color: var(--color-neutral-500);
+  background-color: var(--color-neutral-100);
   border-left: 1px solid var(--color-primary-300);
   border: 4px solid var(--color-primary-500);
   border-radius: var(--gap-small);
@@ -1579,7 +1536,6 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   display: grid;
   margin-bottom: var(--gap-small);
   padding-left: var(--gap-small);
-  background-color: var(--color-neutral-500);
       grid-template-areas: "image name" "image date" "image moderation" "image ." ". content" ". reply";
   -ms-grid-columns: auto 1fr;
       grid-template-columns: auto 1fr;
@@ -1608,10 +1564,8 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: name;
-  font-size: 1.25rem;
-  font-weight: 700;
-  font-family: Roboto, sans-serif;
-  line-height: 1.5rem;
+  font-weight: bold;
+  font-size: larger;
   color: var(--color-primary-300);
 }
 
@@ -1626,7 +1580,7 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1rem;
+  line-height: 1.1em;
 }
 
 .post-comments footer .comment-metadata a {
@@ -1648,17 +1602,18 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   position: absolute;
-  line-height: 200%;
-  text-align: center;
+  line-height: 2em;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   right: .25em;
-  top: 0;
 }
 
 .post-comments footer .comment-awaiting-moderation {
   font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1rem;
+  line-height: 1.1em;
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: moderation;
@@ -1689,8 +1644,8 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   font-size: var(--font-size-300);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1.5em;
-  color: var(--color-fg-300);
+  line-height: 1.25em;
+  color: var(--color-primary-300);
   font-weight: 400;
   line-height: 1.5em;
   text-decoration: none;
@@ -1701,7 +1656,7 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   font-size: var(--font-size-200);
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  line-height: 1rem;
+  line-height: 1.1em;
   position: relative;
   padding-left: 1.5em;
   text-decoration: none;
@@ -1712,10 +1667,150 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   position: absolute;
-  line-height: 200%;
-  text-align: center;
+  line-height: 2em;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   left: .25em;
-  top: 0;
+}
+
+:root {
+  --logo-height: 96px;
+}
+
+.logo {
+  --lheight: var(--logo-height,4em);
+  --lwidth: var(--logo-width, calc(var(--lheight) * 0.8));
+  width: var(--lwidth) !important;
+  height: var(--lheight) !important;
+  --r-width: var(--letter-width, var(--lwidth));
+  --r-height: var(--letter-height, var(--lheight));
+  font-family: sans-serif;
+  background-color: var(--color-bg-logo);
+  color: var(--color-fg-logo);
+  font-size: 0.1;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo span {
+  display: none;
+}
+
+.logo::after {
+  content: 'R';
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  z-index: 2;
+  font-size: calc(var(--r-width) * 1);
+  font-weight: 700;
+  display: block;
+  padding-left: 7%;
+}
+
+header.site-header nav {
+  background-color: var(--color-bg-menu);
+  padding: var(--gap-small) var(--gap-medium) var(--gap-small) var(--gap-medium);
+  overflow: hidden;
+}
+
+header.site-header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header.site-header nav ul li {
+  margin-right: var(--gap-medium);
+  list-style-type: none;
+}
+
+header.site-header nav ul li a, header.site-header nav ul li a:hover, header.site-header nav ul li a:visited {
+  font-size: var(--font-size-300);
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  line-height: 1.25em;
+  background-color: transparent;
+  color: var(--color-fg-menu);
+  text-decoration: none;
+  -webkit-transition: 100ms;
+  transition: 100ms;
+}
+
+header.site-header nav ul li a:hover {
+  text-shadow: 0 0 2px var(--color-secondary-200);
+  font-size: var(--font-size-400);
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.5em;
+  font-weight: bold;
+  font-size: larger;
+}
+
+header.site-header nav ul li.current-menu-item a {
+  font-size: var(--font-size-400);
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  line-height: 1.5em;
+  font-weight: bold;
+  font-size: larger;
+}
+
+header.site-header nav ul li:first-child {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  text-align: left;
+}
+
+header.site-header nav ul:hover a {
+  text-shadow: 0 0 2px var(--color-fg-menu);
+  color: transparent;
+}
+
+header.site-header .user {
+  margin-top: var(--gap-medium);
+}
+
+.user-profile .edit-profile {
+  line-height: 1.5em;
+  font-weight: bold;
+  font-size: larger;
+  position: relative;
+  padding-right: 1.75em;
+}
+
+.user-profile .edit-profile::after {
+  content: '\f4ff';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  line-height: 2em;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  right: .25em;
+}
+
+.user-profile .logout::before {
+  content: '|';
+  display: inline-block;
+  margin-left: var(--gap-small);
+  margin-right: var(--gap-small);
+}
+
+.user-profile .login::after {
+  content: '|';
+  display: inline-block;
+  margin-left: var(--gap-small);
+  margin-right: var(--gap-small);
+  font-weight: bold;
+  font-size: larger;
 }
 
 #login h1 a, .login h1 a {

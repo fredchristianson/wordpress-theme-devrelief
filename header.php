@@ -21,7 +21,7 @@
 	<?php if ( has_custom_logo() ) { ?>
 		<div class="site-logo"><?php the_custom_logo(); ?></div>
 	<? } else { ?>
-		<div class="site-logo"><img width="200" height="200" src="<?php bloginfo('template_directory'); ?>/images/dr-simple-blue.png" class="custom-logo"></div>
+		<div class="logo site-logo"><span>D</span><span>R</span></div>
 
 	<?php } ?>
 	<h1 class='site-title' ><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>

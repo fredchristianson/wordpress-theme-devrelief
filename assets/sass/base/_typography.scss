@@ -15,9 +15,6 @@ article {
   margin-bottom: 2rem;
 }
 
-em {
-  font-style: italic;
-}
 
 
 
@@ -28,67 +25,37 @@ em {
 */
 
 @mixin text1 {
-  @include font-large;
-  color: var(--color-fg-bold);
+  @include fs1;
+  color: var(--color-primary-100);
   line-height: 2em;
 }
 
 @mixin text2 {
-  @include font-medium;
-  color: var(--color-fg-bold);
-  line-height: 1.5em;
+  @include fs2;
+  color: var(--color-primary-200);
+  line-height: 1.75em;
 }
 
 @mixin text3 {
-  @include font-medium;
-  color: var(--color-fg-normal);
+  @include fs3;
+  color: var(--color-primary-300);
   font-weight: 400;
   line-height: 1.5em;
 } 
 
 @mixin text4 {
-  @include font-normal;
-  color: var(--color-fg-normal);
-  line-height: 1.5em;
+  @include fs4;
+  color: var(--color-primary-400);
+  line-height: 1.25em;
 }
 
 @mixin text5 {
-  @include font-normal;
+  @include fs5;
   font-size: 0.75rem;
-  color: var(--color-neutral-300);
-  line-height: 1.2em;
+  color: var(--color-primary-400);
+  line-height: 1.0em;
 }
 
-@mixin text-500 {
-  @include font-500;
-  color: var(--color-fg-100);
-}
-
-@mixin text-400 {
-  @include font-400;
-  color: var(--color-fg-200);
-  line-height: 1.5em;
-}
-
-@mixin text-300 {
-  @include font-300;
-  color: var(--color-fg-300);
-  font-weight: 400;
-  line-height: 1.5em;
-} 
-
-@mixin text-200 {
-  @include font-200;
-  color: var(--color-fg-400);
-  line-height: 1.5em;
-}
-
-@mixin text-100 {
-  @include font-100;
-  font-size: 0.75rem;
-  color: var(--color-fg-400);
-  line-height: 1.2em;
-}
 
 h1,.text1 {
   @include text1;
@@ -113,4 +80,8 @@ h5, .text5 {
 strong {
   font-size: 1.5em;
   font-weight: 700;
+}
+
+em {
+  font-style: italic;
 }

@@ -1,0 +1,43 @@
+header.site-header {
+    nav {
+        background-color: var(--color-bg-menu);
+        padding: var(--gap-small) var(--gap-medium) var(--gap-small) var(--gap-medium) ;
+        overflow: hidden;
+        ul {
+            display: flex;
+            li {
+                margin-right: var(--gap-medium);
+                list-style-type: none;
+                a, a:hover, a:visited {
+                    @include fs3;
+                    background-color: transparent;
+                    color: var(--color-fg-menu);
+                    text-decoration: none;
+                
+                    transition: 100ms;
+                }
+
+                a:hover {
+                    text-shadow: 0 0 2px var(--color-secondary-200);
+                    @include fs2;
+                    @include font-bold;
+                }
+
+                &.current-menu-item a {
+                    @include fs2;
+                    @include font-bold;
+                }
+            }
+
+            li:first-child { 
+                flex: 0;
+                text-align: left;
+            }
+        }
+
+        ul:hover a {
+            text-shadow: 0 0 2px var(--color-fg-menu);
+            color: transparent;
+        }
+    }
+}

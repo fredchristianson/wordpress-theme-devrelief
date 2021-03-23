@@ -4,6 +4,7 @@
 
 
 html {
+    // --font-size-xxx work like font-weights.  the higher the xxx, the more visible
     --font-size-300: clamp(16px,calc(.7rem + .25vw),28px);
     --font-size-200: calc( var(--font-size-300) * 0.75);
     --font-size-100: calc( var(--font-size-200) * 0.75);
@@ -22,82 +23,47 @@ html {
     font-family: 'Source Code Pro',monospace;
 }
 
-@mixin font-500 {
-    font-size: var(--font-size-100);
-    font-weight: 400;
-    font-family: Roboto, sans-serif;
-    line-height: 1.1em;
-}
-
-@mixin font-400 {
-    font-size: var(--font-size-200);
-    font-weight: 400;
-    font-family: Roboto, sans-serif;
-    line-height: 1.2em;
-}
-
-@mixin font-300 {
-    font-size: var(--font-size-300);
-    font-weight: 400;
-    font-family: Roboto, sans-serif;
-    line-height: 1.5em;
-}
-
-
-@mixin font-200 {
-    font-size: var(--font-size-400);
-    font-weight: 700;
-    font-family: Roboto, sans-serif;
-    line-height: 1.5em;
-}
-
-@mixin font-100 {
+// create font styles fs1/fs2/fs3/... that work like h1/h2/h3/....  fs1 being "most important"
+@mixin fs1 {
     font-size: var(--font-size-500);
     font-weight: 700;
     font-family: Roboto, sans-serif;
     line-height: 1.75em;
 }
 
-
-@mixin font-small {
-    font-size: var(--font-size-200);
-    font-weight: 400;
+@mixin fs2 {
+    font-size: var(--font-size-400);
+    font-weight: 700;
     font-family: Roboto, sans-serif;
-    line-height: 1rem;
+    line-height: 1.5em;
 }
 
-@mixin font-normal {
+@mixin fs3 {
     font-size: var(--font-size-300);
     font-weight: 400;
     font-family: Roboto, sans-serif;
-    line-height: 1.2rem;
+    line-height: 1.25em;
 }
 
 
-@mixin font-medium {
-    font-size: 1.25rem;
-    font-weight: 700;
+@mixin fs4 {
+    font-size: var(--font-size-200);
+    font-weight: 400;
     font-family: Roboto, sans-serif;
-    line-height: 1.2rem;
+    line-height: 1.1em;
 }
 
-
-
-@mixin font-large {
-    font-size: 1.5rem;
-    font-weight: 700;
+@mixin fs5 {
+    font-size: var(--font-size-100);
+    font-weight: 400;
     font-family: Roboto, sans-serif;
-    line-height: 1.7rem;
+    line-height: 1.0em;
 }
-
 
 @mixin font-bold {
-    font-size: 1.25rem;
-    font-weight: 700;
-    font-family: Roboto, sans-serif;
-    line-height: 1.5rem;
+    font-weight: bold;
+    font-size: larger;
 }
-
 @mixin font-site-title {
     font-family: 'Quicksand', sans-serif;
     font-size: 2.0rem;

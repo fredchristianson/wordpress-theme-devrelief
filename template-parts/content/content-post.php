@@ -18,10 +18,11 @@
     if ($tags) {
         foreach($tags as $tag) {
             ?>
-                <a href='<?echo get_tag_link($tag)?>'>
-                    <span class='tag tag-<?echo trim(str_replace(array(':',' ',';','.','?','\r','\n','\t'),'-',strtolower($tag->name))," \n\r\t\v\0;?,.?;:-")?>'><? 
-                        echo $tag->name
-                    ?></span></a><?
+             
+                    <span class='tag tag-<?echo trim(str_replace(array(':',' ',';','.','?','\r','\n','\t'),'-',strtolower($tag->name))," \n\r\t\v\0;?,.?;:-")?>'>
+                    <a href='<?echo get_tag_link($tag)?>'><?
+                           echo $tag->name
+                    ?></a></span><?
         }
     }
     ?></span><?
@@ -31,12 +32,13 @@
     if ($categories) {
         foreach($categories as $category) {
             ?>
-            <a href='<?echo get_category_link($category)?>'>
-            <span class='category category-<?echo  trim(str_replace(array(':',' ',';','.','?','\r','\n','\t'),'-',strtolower($category->name))," \n\r\t\v\0;?,.?;:-")?>'><? 
-                echo $category->name;
+            
+            <span class='category category-<?echo  trim(str_replace(array(':',' ',';','.','?','\r','\n','\t'),'-',strtolower($category->name))," \n\r\t\v\0;?,.?;:-")?>'>
+               <a href='<?echo get_category_link($category)?>'>
+            <?echo $category->name;
                 
-            ?></span>
-            </a><?
+            ?>
+            </span></a><?
         }
     }
     ?></span><?

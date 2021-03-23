@@ -6,8 +6,10 @@
 
     article.post {
         height: min-content;
-        flex: 1 1 300px;
-        background-color: var(--color-primary-500);
+        flex: 0 0 300px;
+        background-color: var(--color-primary-100);
+        color: var(--color-neutral-500);
+        border-radius: var(--gap-medium);
         header {
             position: relative;
             display: grid;
@@ -61,8 +63,8 @@ article.post {
         h2.title {
             grid-area: title;
             a,a:hover {
-                @include font-large;
-                color: var(--color-link);
+                @include fs2;
+                color: var(--color-primary-500);
                 text-decoration: none;
             }
         }
@@ -103,10 +105,16 @@ article.post {
             grid-area: tags;
             @include text4;
             font-style: italic;
+            line-height: unset;
+            height: auto;
+            margin-bottom: var(--gap-small);
         }
         .categories {
             grid-area: categories;
             @include text4;
+            line-height: unset;
+            height: auto;
+            margin-bottom: var(--gap-small);
         }
 
         .posted_at {

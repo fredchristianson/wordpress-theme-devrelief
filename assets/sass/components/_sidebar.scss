@@ -1,5 +1,5 @@
 .sidebar {
-    @include font-small;
+    @include fs4;
     padding: var(--gap-small);
     overflow: hidden;
 }
@@ -10,7 +10,7 @@
     color: var(--color-fg-primary-sidebar);
 
     h1, h2 {
-        @include font-medium;
+        @include fs3;
         color: var(--color-fg-highlight-primary-sidebar);
     }
 }

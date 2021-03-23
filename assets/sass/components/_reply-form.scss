@@ -1,13 +1,13 @@
 @use map;
 
 #respond {
-    background-color: var(--color-secondary-500);
+    background-color: var(--color-secondary-100);
     border-radius: var(--gap-small);
     padding: var(--gap-medium);
 
     
     #commentform { 
-        @include font-small;
+        @include fs4;
     
         .comment-notes {
             width: 100%;
@@ -26,7 +26,7 @@
                 text-align: right;
             }
             textarea, input {
-                @include font-medium;
+                @include fs3;
                 width: 75%;
                 max-width: 80ch;
                 font-weight: 400;
@@ -41,7 +41,7 @@
         }
 
         .form-submit {
-            @include button-300;
+            @include button3;
             @include icon-submit-right;
             width: auto;
             display: inline-block;

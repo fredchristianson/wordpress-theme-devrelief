@@ -6,23 +6,34 @@ button, input[type='submit'] {
     border: 1px solid var(--color-border-normal);
     border-radius: var(--border-radius-small);
     
-    outline: 0;
 }
 
-@mixin button-200 {
-    padding: var(--gap-small);
-    @include text-200;
+
+@mixin button1 {
+    padding: var(--gap-medium);
+    @include text1;
     text-decoration: none;
 
     background-color: var(--color-primary-200);
     color: var(--color-neutral-500);
-    border-radius: var(--gap-small);
-    margin-bottom: var(--gap-small);
+    border-radius: var(--gap-medium);
+    margin-bottom: var(--gap-medium);
 }
 
-@mixin button-300 {
+@mixin button2 {
+    padding: var(--gap-medium);
+    @include text2;
+    text-decoration: none;
+
+    background-color: var(--color-primary-200);
+    color: var(--color-neutral-500);
+    border-radius: var(--gap-medium);
+    margin-bottom: var(--gap-medium);
+}
+
+@mixin button3 {
     padding: var(--gap-small);
-    @include text-300;
+    @include text3;
     text-decoration: none;
 
     background-color: var(--color-primary-300);
@@ -31,13 +42,13 @@ button, input[type='submit'] {
     margin-bottom: var(--gap-small);
 }
 
-@mixin button-400 {
+@mixin button4 {
     padding: var(--gap-small);
-    @include text-400;
+    @include text4;
     text-decoration: none;
 
-    background-color: var(--color-primary-400);
-    color: var(--color-neutral-400);
+    background-color: var(--color-primary-200);
+    color: var(--color-neutral-100);
     border-radius: var(--gap-small);
     margin-bottom: var(--gap-small);
 }

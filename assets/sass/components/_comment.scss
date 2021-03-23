@@ -1,5 +1,5 @@
 .post-comments {
-    background-color: var(--color-neutral-500);
+    background-color: var(--color-neutral-100);
     border-left: 1px solid var(--color-primary-300);
     border: 4px solid var(--color-primary-500);
     border-radius: var(--gap-small);
@@ -27,7 +27,6 @@
         display: grid;
         margin-bottom: var(--gap-small);
         padding-left: var(--gap-small);
-        background-color: var(--color-neutral-500);
         grid-template-areas:  
             "image name"
             "image date"
@@ -64,7 +63,7 @@
         }
         .comment-metadata {
             grid-area: date;
-            @include font-small;
+            @include fs4;
             a {
                 color:var(--color-neutral-300);
             }
@@ -80,7 +79,7 @@
         }
 
         .comment-awaiting-moderation {
-            @include font-small;
+            @include fs4;
             grid-area: moderation;
             color:transparent;
             width: auto;
@@ -99,8 +98,8 @@
         grid-area: reply;
         a, a:hover {
             padding: var(--gap-small);
-            @include button-300;
-            @include font-small;
+            @include button3;
+            @include fs4;
             @include icon-reply-left;
             text-decoration: none;
         }

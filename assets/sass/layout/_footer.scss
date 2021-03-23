@@ -9,7 +9,8 @@ footer {
     background-color: var(--footer-bg);
     color: var(--footer-fg);
     padding: 0.25rem;
-
+    // make height big enought to hold recapcha terms
+    height: 100px;
     display: grid;
     grid-template-areas: 
         "widgets navigation";
@@ -27,7 +28,7 @@ footer {
             display: flex;
             li {
                 flex: 0;
-                list-style-type: none;
+                list-style-type: none; 
                 white-space: nowrap;
                 margin-left: 1rem;
                 text-align: right;

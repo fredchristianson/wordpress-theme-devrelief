@@ -840,6 +840,7 @@ footer {
   background-color: var(--footer-bg);
   color: var(--footer-fg);
   padding: 0.25rem;
+  height: 100px;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "widgets navigation";

@@ -756,7 +756,7 @@ header.site-header {
   position: relative;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "logo title . social social" "logo tagline . . user" " logo . . . ." "menu menu menu menu menu ";
+      grid-template-areas: "logo title . . user" "logo tagline . . ." " logo . . social social" "menu menu menu menu menu ";
   -ms-grid-columns: min-content auto 1fr auto auto;
       grid-template-columns: -webkit-min-content auto 1fr auto auto;
       grid-template-columns: min-content auto 1fr auto auto;
@@ -815,7 +815,7 @@ header.site-header .site-tagline {
 }
 
 header.site-header .social-widgets {
-  -ms-grid-row: 1;
+  -ms-grid-row: 3;
   -ms-grid-column: 4;
   -ms-grid-column-span: 2;
   grid-area: social;
@@ -826,16 +826,17 @@ header.site-header .social-widgets {
 }
 
 header.site-header .user {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 5;
   grid-area: user;
+  padding-top: 0;
   padding-right: var(--gap-medium);
   white-space: nowrap;
 }
 
 footer {
-  --footer-bg: var(--color-fg);
-  --footer-fg: var(--color-bg);
+  --footer-bg: var(--color-neutral-400);
+  --footer-fg: var(--color-primary-200);
   background-color: var(--footer-bg);
   color: var(--footer-fg);
   padding: 0.25rem;
@@ -862,6 +863,7 @@ footer nav {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: navigation;
+  margin-right: 10rem;
 }
 
 footer nav ul {
@@ -1771,10 +1773,6 @@ header.site-header nav ul li:first-child {
 header.site-header nav ul:hover a {
   text-shadow: 0 0 2px var(--color-fg-menu);
   color: transparent;
-}
-
-header.site-header .user {
-  margin-top: var(--gap-medium);
 }
 
 .user-profile .edit-profile {

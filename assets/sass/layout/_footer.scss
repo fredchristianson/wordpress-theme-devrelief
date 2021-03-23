@@ -2,8 +2,8 @@
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
 footer {
-    --footer-bg: var(--color-fg);
-    --footer-fg: var(--color-bg);
+    --footer-bg: var(--color-neutral-400);
+    --footer-fg: var(--color-primary-200);
     
     
     background-color: var(--footer-bg);
@@ -22,7 +22,7 @@ footer {
     nav {
         @include fs3;
         grid-area: navigation;
-
+        margin-right: 10rem;
         ul {
             display: flex;
             li {

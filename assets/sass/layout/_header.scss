@@ -11,9 +11,9 @@ header.site-header {
     
     display: grid;
     grid-template-areas: 
-        "logo title . social social"
-        "logo tagline . . user"
-        " logo . . . ."
+        "logo title . . user"
+        "logo tagline . . ."
+        " logo . . social social"
         "menu menu menu menu menu ";
     grid-template-columns: min-content auto 1fr auto auto;
     gap: 0 .25rem ;
@@ -66,7 +66,7 @@ header.site-header {
 
     .user {
         grid-area: user;
-       
+        padding-top: 0;
         padding-right: var(--gap-medium);
 
         white-space: nowrap;

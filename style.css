@@ -526,7 +526,7 @@ body {
   font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
-p {
+p, ul {
   margin-bottom: 1.5rem;
 }
 

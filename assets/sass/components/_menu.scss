@@ -5,6 +5,7 @@ header.site-header {
         overflow: hidden;
         ul {
             display: flex;
+            margin-bottom: 0;
             li {
                 margin-right: var(--gap-medium);
                 list-style-type: none;

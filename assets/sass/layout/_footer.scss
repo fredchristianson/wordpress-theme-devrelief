@@ -36,6 +36,33 @@ footer {
                     background-color: transparent;
                     color: var(--footer-fg);
                     text-decoration: none;
+                    position: relative;
+                    z-index: 10;
+                }
+
+                a::before {
+                    content: ' ';
+                    position:absolute;
+                    top: calc(0% - var(--gap-small));
+                    bottom: calc(0% - var(--gap-small));
+                    right: calc(0% - var(--gap-small));
+                    width: 0%;
+                    opacity: 0;
+                    background-color: var(--color-secondary-300);
+                    top: 0;
+                    height: 100%;
+                    
+                    transition: opacity 400ms 300ms, width 300ms;
+                    z-index: -1;
+                    border-radius: var(--gap-small);
+                }
+
+
+                a:hover::before {
+                    left: calc(0% - var(--gap-small));
+                    width: calc(100% + 2 * var(--gap-small));
+                    opacity: 1;
+                    transition: opacity 10ms, width 200ms;
                 }
             }
 

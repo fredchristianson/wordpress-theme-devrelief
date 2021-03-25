@@ -722,12 +722,12 @@ html .palette-1-off {
 }
 
 #dr-main ul {
-  margin-left: var(--large-gap);
+  margin-left: var(--gap-large);
   list-style: disc;
 }
 
 #dr-main ul ul {
-  margin-left: var(--medium-gap);
+  margin-left: var(--gap-medium);
   list-style: circle;
 }
 
@@ -887,6 +887,33 @@ footer nav ul li a, footer nav ul li a:hover, footer nav ul li a:visited {
   background-color: transparent;
   color: var(--footer-fg);
   text-decoration: none;
+  position: relative;
+  z-index: 10;
+}
+
+footer nav ul li a::before {
+  content: ' ';
+  position: absolute;
+  top: calc(0% - var(--gap-small));
+  bottom: calc(0% - var(--gap-small));
+  right: calc(0% - var(--gap-small));
+  width: 0%;
+  opacity: 0;
+  background-color: var(--color-secondary-300);
+  top: 0;
+  height: 100%;
+  -webkit-transition: opacity 400ms 300ms, width 300ms;
+  transition: opacity 400ms 300ms, width 300ms;
+  z-index: -1;
+  border-radius: var(--gap-small);
+}
+
+footer nav ul li a:hover::before {
+  left: calc(0% - var(--gap-small));
+  width: calc(100% + 2 * var(--gap-small));
+  opacity: 1;
+  -webkit-transition: opacity 10ms, width 200ms;
+  transition: opacity 10ms, width 200ms;
 }
 
 footer nav ul li:first-child {

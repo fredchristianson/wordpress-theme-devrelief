@@ -48,11 +48,11 @@
     }
 
     ul {
-        margin-left: var(--large-gap);
+        margin-left: var(--gap-large);
         list-style: disc;
 
         ul {
-            margin-left: var(--medium-gap);
+            margin-left: var(--gap-medium);
             list-style: circle;
         }
     }

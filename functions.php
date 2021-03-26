@@ -161,9 +161,13 @@ add_action( 'widgets_init', 'devrelief_widgets_init' );
 
 function exclude_category($query) {
 	$logger = new DRLog\DRLogger("exclude_category");
+	
 	$url = $_SERVER['REQUEST_URI'];
 	//$logger->debug("Check category: ".$url.' '.(strpos($url,'/category/')===false));
-
+	if (strpos($url,'wp-admin')){
+		// show everything on admin pages
+		return $query;
+	}
 	if ($_SERVER['REQUEST_METHOD'] === 'GET' && !$query->get('cat') && strpos($url,'/category/')===false) {
 		$ignore_values = get_option('ignore_categories');
 		if ($ignore_values && count($ignore_values)>0) {

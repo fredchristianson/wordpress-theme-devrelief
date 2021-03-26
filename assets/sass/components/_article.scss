@@ -84,7 +84,7 @@ article.post {
                 opacity: .2;
             }
             .default-thumbnail::before {
-                content: "Fred forgot an image. Here's a post.";
+                content: "Fred forgot an image.";
                 font-size: 16px;
                 position: absolute;
                 z-index: 1;

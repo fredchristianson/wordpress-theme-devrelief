@@ -9,7 +9,7 @@ $is_idea = false;
 $is_in_progress = false;
 $cat_class = '';
 foreach($categories as $category){
-    $logger->debug("category: ".$category->name);
+    //$logger->debug("category: ".$category->name);
     if ($category->name == 'Draft') {
         $is_draft = true;
         $cat_class = $cat_class.' draft';

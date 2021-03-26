@@ -1,6 +1,6 @@
 <?
 $logger = new DRLog\DRLogger("loop");
-$logger->debug("loop running");
+//$logger->debug("loop running");
 
 if ( have_posts() ) :
     ?><section class='posts content multiple'><?

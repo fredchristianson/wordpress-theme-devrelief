@@ -1,7 +1,7 @@
 <?
 
 $logger = new DRLog\DRLogger("loop-home");
-$logger->debug("home loop running");
+//$logger->debug("home loop running");
 ?>
 <?
 if ( have_posts() ) :

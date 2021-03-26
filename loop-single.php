@@ -1,6 +1,6 @@
 <?
 $logger = new DRLog\DRLogger("loop-single");
-$logger->debug("single loop running");
+//$logger->debug("single loop running");
 if ( have_posts() ) :
     while (have_posts() ) : the_post(); 
     ?><section class='posts content single'><?

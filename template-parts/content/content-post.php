@@ -1,7 +1,29 @@
-<?$logger = new DRLog\DRLogger("loop");
+<?$logger = new DRLog\DRLogger("content-post");
 ?>
 
-<article class="post"><?
+$categories = get_the_category();
+$is_draft = false;
+$is_idea = false;
+$is_in_progress = false;
+$cat_class = '';
+foreach($categories as $category){
+    $logger.debug("category: ".$category->name);
+    if ($category->name == 'Draft') {
+        $is_draft = true;
+        $cat_class = $cat_class.' draft';
+    }
+    if ($category->name == 'Idea') {
+        $is_idea = true;
+        $cat_class = $cat_class.' idea';
+    }
+    if ($category->name == 'In Progress') {
+        $is_idea = true;
+        $cat_class = $cat_class.' in-progress';
+    }
+}
+
+
+<article class="post <?echo $cat_class ?>"><?
     ?><header><?
     if (!is_front_page()) {
         ?><h2 class='title'><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2><?

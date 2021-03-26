@@ -162,7 +162,7 @@ add_action( 'widgets_init', 'devrelief_widgets_init' );
 function exclude_category($query) {
 	$logger = new DRLog\DRLogger("exclude_category");
 	$url = $_SERVER['REQUEST_URI'];
-	$logger->debug("Check category: ".$url.' '.strpos($url,'/category/'));
+	//$logger->debug("Check category: ".$url.' '.strpos($url,'/category/'));
 
 	if ($_SERVER['REQUEST_METHOD'] === 'GET' && !$query->get('cat') && !strpos($url,'/category/')) {
         $ignore_values = get_option('ignore_categories');

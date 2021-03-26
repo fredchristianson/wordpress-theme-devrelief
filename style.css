@@ -1840,6 +1840,11 @@ header.site-header nav ul:hover a {
   font-size: larger;
 }
 
+figure.centered img {
+  margin: auto auto;
+  display: block;
+}
+
 #login h1 a, .login h1 a {
   background-image: url(./images/dr-simple-blue.png);
   position: relative;

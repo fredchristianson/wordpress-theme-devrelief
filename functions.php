@@ -1,5 +1,6 @@
 <?php
- 
+$logger = new DRLog\DRLogger("functions.php");
+
 function custom_theme_assets() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() , array(), time() , 'all' );
 
@@ -159,7 +160,11 @@ function devrelief_widgets_init() {
 add_action( 'widgets_init', 'devrelief_widgets_init' );
 
 function exclude_category($query) {
-	if ($_SERVER['REQUEST_METHOD'] === 'GET' && !$query->get('cat')) {
+	$logger = new DRLog\DRLogger("exclude_category");
+	$url = $_SERVER['REQUEST_URI'];
+	//$logger->debug("Check category: ".$url.' '.strpos($url,'/category/'));
+
+	if ($_SERVER['REQUEST_METHOD'] === 'GET' && !$query->get('cat') && !strpos($url,'/category/')) {
         $ignore_values = get_option('ignore_categories');
 		if ($ignore_values && count($ignore_values)>0) {
 			$negatives = array_map(function($val) {

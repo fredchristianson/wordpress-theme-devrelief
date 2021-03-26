@@ -1,5 +1,7 @@
-<?$logger = new DRLog\DRLogger("content-post");
-?>
+<?
+
+$logger = new DRLog\DRLogger("content-post");
+
 
 $categories = get_the_category();
 $is_draft = false;
@@ -7,7 +9,7 @@ $is_idea = false;
 $is_in_progress = false;
 $cat_class = '';
 foreach($categories as $category){
-    $logger.debug("category: ".$category->name);
+    $logger->debug("category: ".$category->name);
     if ($category->name == 'Draft') {
         $is_draft = true;
         $cat_class = $cat_class.' draft';
@@ -23,6 +25,7 @@ foreach($categories as $category){
 }
 
 
+?>
 <article class="post <?echo $cat_class ?>"><?
     ?><header><?
     if (!is_front_page()) {

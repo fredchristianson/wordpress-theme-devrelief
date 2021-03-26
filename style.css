@@ -1193,6 +1193,76 @@ article.post header .content {
   grid-area: content;
 }
 
+article.draft .content {
+  position: relative;
+  padding-top: 4rem;
+}
+
+article.draft .content::before {
+  position: absolute;
+  content: 'This is a draft.  Please leave any comments on content, writing style, etc';
+  left: 0;
+  top: 0;
+  height: 4rem;
+  width: 100%;
+  background-color: red;
+  color: #ffffff;
+  padding: var(--gap-small);
+}
+
+article.draft .thumbnail {
+  position: relative;
+  display: inline-block;
+}
+
+article.draft .thumbnail::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(197, 243, 91, 0.5);
+  background-image: url(images/draft.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+article.idea .content {
+  position: relative;
+  padding-top: 4rem;
+}
+
+article.idea .content::before {
+  position: absolute;
+  content: 'This is an idea that may or may not become a post. Leave comments if you are interested.';
+  left: 0;
+  top: 0;
+  height: 4rem;
+  width: 100%;
+  background-color: #fbff00;
+  color: #000000;
+  padding: var(--gap-small);
+}
+
+article.idea .thumbnail {
+  position: relative;
+  display: inline-block;
+}
+
+article.idea .thumbnail::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.5);
+  background-image: url(images/idea.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .three-column .wp-block-column {
   width: 100%;
   border-right: 1px solid var(--color-faint);

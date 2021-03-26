@@ -164,7 +164,7 @@ function exclude_category($query) {
 	$url = $_SERVER['REQUEST_URI'];
 	$logger->debug("Check category: ".$url.' '.strpos($url,'/category/'));
 
-	if ($_SERVER['REQUEST_METHOD'] === 'GET' && !$query->get('cat') && !strpos($url,'/category/')) {
+	if ($_SERVER['REQUEST_METHOD'] === 'GET' && !$query->get('cat') && strpos($url,'/category/')==false) {
 		$logger->debug("ignore categories");
         $ignore_values = get_option('ignore_categories');
 		if ($ignore_values && count($ignore_values)>0) {

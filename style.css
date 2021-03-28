@@ -526,8 +526,8 @@ body {
   font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
-p, ul {
-  margin-bottom: 1.5rem;
+p p, p ul {
+  margin-top: 1.5rem;
 }
 
 article {
@@ -593,6 +593,12 @@ strong {
 
 em {
   font-style: italic;
+}
+
+.wp-block-verse {
+  margin-left: var(--gap-large);
+  font-size: 1.5em;
+  font-weight: 700;
 }
 
 html {

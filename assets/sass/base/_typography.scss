@@ -7,7 +7,7 @@ body {
 }
 
 
-p p,p ul {
+p + p,p + ul {
   margin-top: 1.5rem;
 }
 
@@ -91,4 +91,9 @@ em {
   margin-left: var(--gap-large);
   font-size: 1.5em;
   font-weight: 700;
+}
+
+pre {
+  margin-top: var(--gap-medium);
+  margin-bottom: var(--gap-medium);
 }

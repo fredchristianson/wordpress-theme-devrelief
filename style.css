@@ -599,6 +599,7 @@ em {
   margin-left: var(--gap-large);
   font-size: 1.5em;
   font-weight: 700;
+  overflow: visible !important;
 }
 
 pre {

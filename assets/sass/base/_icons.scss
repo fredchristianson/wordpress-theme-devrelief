@@ -66,3 +66,28 @@
         right: .25em;
     }
 }
+
+
+@mixin icon-arrow-left {
+    position: relative;
+    padding-left: 1.5em;
+
+    &::before {
+        content: '\f060';
+        @include font-awesome;
+        
+        left: .25em;
+    }
+}
+
+@mixin icon-arrow-right {
+    position: relative;
+    padding-right: 1.5em;
+
+    &::before {
+        content: '\f061';
+        @include font-awesome;
+        
+        right: .25em;
+    }
+}

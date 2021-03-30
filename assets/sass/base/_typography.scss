@@ -87,16 +87,22 @@ em {
 }
 
 // I use /verse for simple examples that shouldn't get the full /code styling
-.wp-block-verse {
+.wp-block-verse, .wp-block-code {
   margin-left: var(--gap-large);
   font-size: 1.1em;
-  font-weight: 700;
+  font-weight: 400;
   overflow: visible !important;
-}
+  border-left: var(--gap-small) solid  var(--color-primary-400);
+  padding-left: var(--gap-small);}
+
+
 
 
 pre {
   margin-top: var(--gap-small);
   margin-bottom: var(--gap-small);
   overflow: visible;
+  background-color: var(--color-neutral-200-5);
+  color: var(-color-neutral-500);
+
 }

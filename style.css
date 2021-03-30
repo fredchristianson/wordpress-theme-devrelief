@@ -590,22 +590,27 @@ em {
   font-style: italic;
 }
 
-.wp-block-verse {
+.wp-block-verse, .wp-block-code {
   margin-left: var(--gap-large);
   font-size: 1.1em;
-  font-weight: 700;
+  font-weight: 400;
   overflow: visible !important;
+  border-left: var(--gap-small) solid var(--color-primary-400);
+  padding-left: var(--gap-small);
 }
 
 pre {
   margin-top: var(--gap-small);
   margin-bottom: var(--gap-small);
   overflow: visible;
+  background-color: var(--color-neutral-200-5);
+  color: var(-color-neutral-500);
 }
 
 html {
   --color-neutral-100: hsl(0,100%,100%);
   --color-neutral-200: hsl(0, 0%,80%);
+  --color-neutral-200-5: hsla(0, 0%,80%,0.5);
   --color-neutral-300: hsl(0,0%,50);
   --color-neutral-400: hsl(0,0%,20%);
   --color-neutral-500: hsl(0,0%,5%);

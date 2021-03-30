@@ -1,7 +1,10 @@
-header.site-header {
-    nav {
+header.site-header + nav {
+
+        outline: 5px solid hsl(158,50%, 76%);        
+        position: sticky;
+        top:0px;
         background-color: var(--color-bg-menu);
-        padding: var(--gap-small) var(--gap-medium) var(--gap-small) var(--gap-medium) ;
+        padding: var(--gap-small) var(--gap-medium) var(--gap-small) var(--gap-small) ;
         overflow: hidden;
         ul {
             display: flex;
@@ -16,6 +19,7 @@ header.site-header {
                     text-decoration: none;
                 
                     transition: 100ms;
+                    vertical-align: bottom;
                 }
 
                 a:hover {
@@ -41,4 +45,3 @@ header.site-header {
             color: transparent;
         }
     }
-}

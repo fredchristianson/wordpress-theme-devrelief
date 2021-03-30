@@ -417,7 +417,7 @@ html {
   --font-size-100: calc( var(--font-size-200) * 0.75);
   --font-size-400: calc( var(--font-size-300) * 1.25);
   --font-size-500: calc( var(--font-size-400) * 1.25);
-  font-family: Roboto, sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   font-size: var(--font-size-300);
   font-weight: 400;
   line-height: 1.7;
@@ -523,7 +523,7 @@ body {
  */
 body {
   color: #222222;
-  font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font: normal 125% / 1.4;
 }
 
 p + p, p + ul {
@@ -542,27 +542,24 @@ article {
 h1, .text1 {
   font-size: var(--font-size-500);
   font-weight: 700;
-  font-family: Roboto, sans-serif;
   line-height: 1.75em;
-  color: var(--color-primary-100);
+  color: var(--color-neutral-500);
   line-height: 2em;
 }
 
 h2, .text2 {
   font-size: var(--font-size-400);
   font-weight: 700;
-  font-family: Roboto, sans-serif;
   line-height: 1.5em;
-  color: var(--color-primary-200);
+  color: var(--color-neutral-400);
   line-height: 1.75em;
 }
 
 h3, .text3 {
   font-size: var(--font-size-300);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.25em;
-  color: var(--color-primary-300);
+  color: var(--color-neutral-400);
   font-weight: 400;
   line-height: 1.5em;
 }
@@ -570,19 +567,17 @@ h3, .text3 {
 h4, .text4 {
   font-size: var(--font-size-200);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.1em;
-  color: var(--color-primary-400);
+  color: var(--color-neutral-200);
   line-height: 1.25em;
 }
 
 h5, .text5 {
   font-size: var(--font-size-100);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.0em;
   font-size: 0.75rem;
-  color: var(--color-primary-400);
+  color: var(--color-neutral-200);
   line-height: 1.0em;
 }
 
@@ -613,7 +608,7 @@ html {
   --color-neutral-200: hsl(0, 0%,80%);
   --color-neutral-300: hsl(0,0%,50);
   --color-neutral-400: hsl(0,0%,20%);
-  --color-neutral-500: hsl(0,0%,0%);
+  --color-neutral-500: hsl(0,0%,5%);
   --color-primary-100: hsl(218, 60%, 80%);
   --color-primary-200: hsl(218, 60%, 70%);
   --color-primary-300: hsl(218, 60%, 60%);
@@ -634,8 +629,8 @@ html {
   --color-fg-300: var(--color-neutral-200);
   --color-fg-400: var(--color-neutral-200);
   --color-fg-500: var(--color-neutral-200);
-  --color-bg-menu: var(--color-primary-200);
-  --color-fg-menu: var(--color-neutral-100);
+  --color-bg-menu: hsl(158deg 16% 76%);
+  --color-fg-menu: var(--color-primary-400);
   --color-bg-primary-sidebar: var(--color-secondary-100);
   --color-fg-primary-sidebar: var(--color-neutral-500);
   --color-fg-highlight-primary-sidebar: var(--color-primary-200);
@@ -652,11 +647,13 @@ html {
   --color-cat-wordpress: #d1eef8;
   --color-cat-smarthome: #fcdc00;
   --color-fg-brand: var(--color-primary-400);
-  --color-fg-logo: var(--color-fg-brand);
-  --color-bg-logo: var(--color-bg-menu);
+  --color-bg-logo: var(--color-primary-400);
+  --color-fg-logo: hsl(158deg 16% 76%);
 }
 
 html .palette-1-off {
+  --color-green-gray: hsl(158deg 16% 76%);
+  --color-peach:  hsl(15, 100%, 80%);
   --color-bg-menu: var(--color-primary-400);
   --color-fg-menu: var(--color-neutral-400);
   --color-bg-primary-sidebar: rgba(38,205,222,.1);
@@ -676,9 +673,8 @@ html .palette-1-off {
   min-height: 100vh;
   font-size: var(--font-size-300);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.25em;
-  color: var(--color-primary-300);
+  color: var(--color-neutral-400);
   font-weight: 400;
   line-height: 1.5em;
 }
@@ -706,9 +702,8 @@ html .palette-1-off {
   padding: var(--gap-large);
   font-size: var(--font-size-300);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.25em;
-  color: var(--color-primary-300);
+  color: var(--color-neutral-400);
   font-weight: 400;
   line-height: 1.5em;
 }
@@ -716,7 +711,6 @@ html .palette-1-off {
 #dr-main .sidebar {
   font-size: var(--font-size-200);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.1em;
   padding: 0.25rem;
   overflow: hidden;
@@ -761,29 +755,20 @@ h1 {
 }
 
 header.site-header {
-  --logo-height: 6rem;
+  --logo-height: 4rem;
   background-color: #ffffff;
   border-bottom: 1px solid var(--color-faint);
   padding: 0;
   margin: 0;
   position: relative;
+  z-index: 10;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "logo title . . user" "logo tagline . . ." " logo . . social social" "menu menu menu menu menu ";
+      grid-template-areas: "logo title . social user" "logo tagline . . ." " logo . . . .";
   -ms-grid-columns: min-content auto 1fr auto auto;
       grid-template-columns: -webkit-min-content auto 1fr auto auto;
       grid-template-columns: min-content auto 1fr auto auto;
   gap: 0 .25rem;
-}
-
-header.site-header nav {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 5;
-  grid-area: menu;
-  -ms-flex-item-align: left;
-      -ms-grid-row-align: left;
-      align-self: left;
 }
 
 header.site-header .site-logo {
@@ -828,9 +813,8 @@ header.site-header .site-tagline {
 }
 
 header.site-header .social-widgets {
-  -ms-grid-row: 3;
+  -ms-grid-row: 1;
   -ms-grid-column: 4;
-  -ms-grid-column-span: 2;
   grid-area: social;
   position: absolute;
   right: 0;
@@ -872,7 +856,6 @@ footer .sidebar.footer {
 footer nav {
   font-size: var(--font-size-300);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.25em;
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -985,7 +968,6 @@ footer h1 {
 p.link.small {
   font-size: var(--font-size-200);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.1em;
 }
 
@@ -1157,7 +1139,6 @@ article.post header h2.title {
 article.post header h2.title a, article.post header h2.title a:hover {
   font-size: var(--font-size-400);
   font-weight: 700;
-  font-family: Roboto, sans-serif;
   line-height: 1.5em;
   color: var(--color-primary-500);
   text-decoration: none;
@@ -1202,9 +1183,8 @@ article.post header .tags {
   grid-area: tags;
   font-size: var(--font-size-200);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.1em;
-  color: var(--color-primary-400);
+  color: var(--color-neutral-200);
   line-height: 1.25em;
   font-style: italic;
   line-height: unset;
@@ -1218,9 +1198,8 @@ article.post header .categories {
   grid-area: categories;
   font-size: var(--font-size-200);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.1em;
-  color: var(--color-primary-400);
+  color: var(--color-neutral-200);
   line-height: 1.25em;
   line-height: unset;
   height: auto;
@@ -1233,10 +1212,9 @@ article.post header .posted_at {
   grid-area: posted_at;
   font-size: var(--font-size-100);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.0em;
   font-size: 0.75rem;
-  color: var(--color-primary-400);
+  color: var(--color-neutral-200);
   line-height: 1.0em;
 }
 
@@ -1329,9 +1307,8 @@ article.idea .thumbnail::after {
   margin-left: var(--gap-medium);
   font-size: var(--font-size-300);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.25em;
-  color: var(--color-primary-300);
+  color: var(--color-neutral-400);
   font-weight: 400;
   line-height: 1.5em;
 }
@@ -1369,7 +1346,6 @@ ul ul {
 .sidebar {
   font-size: var(--font-size-200);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.1em;
   padding: var(--gap-small);
   overflow: hidden;
@@ -1381,12 +1357,15 @@ ul ul {
   grid-area: primary;
   background-color: var(--color-bg-primary-sidebar);
   color: var(--color-fg-primary-sidebar);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4rem;
+  margin-top: 1rem;
 }
 
 .sidebar.primary h1, .sidebar.primary h2 {
   font-size: var(--font-size-300);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.25em;
   color: var(--color-fg-highlight-primary-sidebar);
 }
@@ -1450,9 +1429,8 @@ ul ul {
 .coblocks-form form textarea, .coblocks-form form input, .coblocks-form form textarea.coblocks-field, .coblocks-form form input.coblocks-field {
   font-size: var(--font-size-300);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.25em;
-  color: var(--color-primary-300);
+  color: var(--color-neutral-400);
   font-weight: 400;
   line-height: 1.5em;
   max-width: 80ch;
@@ -1465,9 +1443,8 @@ ul ul {
   padding: var(--gap-small);
   font-size: var(--font-size-300);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.25em;
-  color: var(--color-primary-300);
+  color: var(--color-neutral-400);
   font-weight: 400;
   line-height: 1.5em;
   text-decoration: none;
@@ -1514,9 +1491,8 @@ form.search-form label input {
   width: 100%;
   font-size: var(--font-size-200);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.1em;
-  color: var(--color-primary-400);
+  color: var(--color-neutral-200);
   line-height: 1.25em;
   margin-bottom: var(--gap-small);
 }
@@ -1525,9 +1501,8 @@ form.search-form [type=submit] {
   padding: var(--gap-small);
   font-size: var(--font-size-200);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.1em;
-  color: var(--color-primary-400);
+  color: var(--color-neutral-200);
   line-height: 1.25em;
   text-decoration: none;
   background-color: var(--color-primary-200);
@@ -1542,9 +1517,8 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   padding: var(--gap-medium);
   font-size: var(--font-size-500);
   font-weight: 700;
-  font-family: Roboto, sans-serif;
   line-height: 1.75em;
-  color: var(--color-primary-100);
+  color: var(--color-neutral-500);
   line-height: 2em;
   text-decoration: none;
   background-color: var(--color-primary-200);
@@ -1577,7 +1551,6 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
 #respond #commentform {
   font-size: var(--font-size-200);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.1em;
 }
 
@@ -1603,7 +1576,6 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
 #respond #commentform p textarea, #respond #commentform p input {
   font-size: var(--font-size-300);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.25em;
   width: 75%;
   max-width: 80ch;
@@ -1619,9 +1591,8 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   padding: var(--gap-small);
   font-size: var(--font-size-300);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.25em;
-  color: var(--color-primary-300);
+  color: var(--color-neutral-400);
   font-weight: 400;
   line-height: 1.5em;
   text-decoration: none;
@@ -1736,7 +1707,6 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   grid-area: date;
   font-size: var(--font-size-200);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.1em;
 }
 
@@ -1769,7 +1739,6 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
 .post-comments footer .comment-awaiting-moderation {
   font-size: var(--font-size-200);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.1em;
   -ms-grid-row: 3;
   -ms-grid-column: 2;
@@ -1800,9 +1769,8 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   padding: var(--gap-small);
   font-size: var(--font-size-300);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.25em;
-  color: var(--color-primary-300);
+  color: var(--color-neutral-400);
   font-weight: 400;
   line-height: 1.5em;
   text-decoration: none;
@@ -1812,7 +1780,6 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   margin-bottom: var(--gap-small);
   font-size: var(--font-size-200);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.1em;
   position: relative;
   padding-left: 1.5em;
@@ -1870,63 +1837,65 @@ form.search-form.search-form:focus-within [type=submit], form.search-form [type=
   padding-left: 7%;
 }
 
-header.site-header nav {
+header.site-header + nav {
+  outline: 5px solid #a3e0ca;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
   background-color: var(--color-bg-menu);
-  padding: var(--gap-small) var(--gap-medium) var(--gap-small) var(--gap-medium);
+  padding: var(--gap-small) var(--gap-medium) var(--gap-small) var(--gap-small);
   overflow: hidden;
 }
 
-header.site-header nav ul {
+header.site-header + nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 0;
 }
 
-header.site-header nav ul li {
+header.site-header + nav ul li {
   margin-right: var(--gap-medium);
   list-style-type: none;
 }
 
-header.site-header nav ul li a, header.site-header nav ul li a:hover, header.site-header nav ul li a:visited {
+header.site-header + nav ul li a, header.site-header + nav ul li a:hover, header.site-header + nav ul li a:visited {
   font-size: var(--font-size-300);
   font-weight: 400;
-  font-family: Roboto, sans-serif;
   line-height: 1.25em;
   background-color: transparent;
   color: var(--color-fg-menu);
   text-decoration: none;
   -webkit-transition: 100ms;
   transition: 100ms;
+  vertical-align: bottom;
 }
 
-header.site-header nav ul li a:hover {
+header.site-header + nav ul li a:hover {
   text-shadow: 0 0 2px var(--color-secondary-200);
   font-size: var(--font-size-400);
   font-weight: 700;
-  font-family: Roboto, sans-serif;
   line-height: 1.5em;
   font-weight: bold;
   font-size: larger;
 }
 
-header.site-header nav ul li.current-menu-item a {
+header.site-header + nav ul li.current-menu-item a {
   font-size: var(--font-size-400);
   font-weight: 700;
-  font-family: Roboto, sans-serif;
   line-height: 1.5em;
   font-weight: bold;
   font-size: larger;
 }
 
-header.site-header nav ul li:first-child {
+header.site-header + nav ul li:first-child {
   -webkit-box-flex: 0;
       -ms-flex: 0;
           flex: 0;
   text-align: left;
 }
 
-header.site-header nav ul:hover a {
+header.site-header + nav ul:hover a {
   text-shadow: 0 0 2px var(--color-fg-menu);
   color: transparent;
 }

@@ -3,7 +3,7 @@
  */
 body {
   color: $text-color;
-  font: normal 125% / 1.4 $text-font-stack;
+  font: normal 125% / 1.4;
 }
 
 
@@ -26,33 +26,33 @@ article {
 
 @mixin text1 {
   @include fs1;
-  color: var(--color-primary-100);
+  color: var(--color-neutral-500);
   line-height: 2em;
 }
 
 @mixin text2 {
   @include fs2;
-  color: var(--color-primary-200);
+  color: var(--color-neutral-400);
   line-height: 1.75em;
 }
 
 @mixin text3 {
   @include fs3;
-  color: var(--color-primary-300);
+  color: var(--color-neutral-400);
   font-weight: 400;
   line-height: 1.5em;
 } 
 
 @mixin text4 {
   @include fs4;
-  color: var(--color-primary-400);
+  color: var(--color-neutral-200);
   line-height: 1.25em;
 }
 
 @mixin text5 {
   @include fs5;
   font-size: 0.75rem;
-  color: var(--color-primary-400);
+  color: var(--color-neutral-200);
   line-height: 1.0em;
 }
 

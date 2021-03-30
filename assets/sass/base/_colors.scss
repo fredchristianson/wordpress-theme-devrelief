@@ -4,7 +4,7 @@ html {
     --color-neutral-200: hsl(0, 0%,80%);
     --color-neutral-300: hsl(0,0%,50);
     --color-neutral-400: hsl(0,0%,20%); 
-    --color-neutral-500: hsl(0,0%,0%);
+    --color-neutral-500: hsl(0,0%,5%);
   
     --color-primary-100: hsl(218, 60%, 80%);
     --color-primary-200: hsl(218, 60%, 70%);
@@ -30,8 +30,8 @@ html {
     --color-fg-400: var(--color-neutral-200);
     --color-fg-500: var(--color-neutral-200);
   
-    --color-bg-menu: var(--color-primary-200);
-    --color-fg-menu: var(--color-neutral-100);
+    --color-bg-menu: hsl(158deg 16% 76%);
+    --color-fg-menu: var(--color-primary-400);
   
     --color-bg-primary-sidebar: var(--color-secondary-100);
     --color-fg-primary-sidebar: var(--color-neutral-500);
@@ -54,11 +54,15 @@ html {
     --color-cat-wordpress: #d1eef8;
     --color-cat-smarthome: #fcdc00;
 
+
     --color-fg-brand: var(--color-primary-400);
-    --color-fg-logo: var(--color-fg-brand);
-    --color-bg-logo: var(--color-bg-menu);
+    --color-bg-logo: var(--color-primary-400);
+    --color-fg-logo: hsl(158deg 16% 76%);
+    
 
     .palette-1-off {
+        --color-green-gray: hsl(158deg 16% 76%);
+        --color-peach:  hsl(15, 100%, 80%);
         --color-bg-menu: var(--color-primary-400);
         --color-fg-menu: var(--color-neutral-400);
       

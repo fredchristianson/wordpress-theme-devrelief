@@ -8,7 +8,9 @@
     grid-area: primary;
     background-color: var(--color-bg-primary-sidebar);
     color: var(--color-fg-primary-sidebar);
-
+    position: sticky;
+    top: 4rem;
+    margin-top: 1rem;
     h1, h2 {
         @include fs3;
         color: var(--color-fg-highlight-primary-sidebar);
